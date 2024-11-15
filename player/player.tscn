@@ -34,8 +34,8 @@ tracker = &"right_hand"
 [node name="RightHand" parent="RightCon" instance=ExtResource("4_rsfaa")]
 
 [node name="CollisionHandRight" parent="RightCon" instance=ExtResource("5_ujm8o")]
-collision_layer = 131076
-collision_mask = 327684
+collision_layer = 131084
+collision_mask = 327692
 
 [node name="FunctionPickup" parent="RightCon" instance=ExtResource("4_00mqp")]
 
