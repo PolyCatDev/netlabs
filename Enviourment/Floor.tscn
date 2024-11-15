@@ -1,6 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://blfmdgkapv0eb"]
-
-[ext_resource type="PackedScene" uid="uid://cxvadrnjvshp5" path="res://Levels/pickable_cube.tscn" id="1_jv3hs"]
+[gd_scene load_steps=4 format=3 uid="uid://blfmdgkapv0eb"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jfssx"]
 size = Vector2(5, 5)
@@ -21,6 +19,3 @@ physics_material_override = SubResource("PhysicsMaterial_bami8")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0115693, -2.38419e-07, 0.00632)
 shape = SubResource("BoxShape3D_5bipx")
-
-[node name="Node3D" parent="." instance=ExtResource("1_jv3hs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02136, 0)
