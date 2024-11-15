@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://chc2rytfjrw56"]
+[gd_scene load_steps=9 format=3 uid="uid://chc2rytfjrw56"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_0fcww"]
 [ext_resource type="PackedScene" uid="uid://b6a4s5j7qolxa" path="res://objects/router/scene.gltf" id="2_mcvmw"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_p8kqo"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_8e610"]
 [ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="5_an26n"]
+[ext_resource type="PackedScene" uid="uid://btufk1nkk70ei" path="res://snapzones/routerSnapzone/snap_zone_router_point_1.tscn" id="6_n4dij"]
+[ext_resource type="PackedScene" uid="uid://djv46gxxs1jkj" path="res://snapzones/routerSnapzone/snap_zone_router_point_2.tscn" id="7_ubx5e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_swxwr"]
 size = Vector3(0.2, 0.152, 0.2)
@@ -26,6 +28,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.097
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["router"]]
 shape = SubResource("BoxShape3D_swxwr")
 
-[node name="GrabPointSnap" parent="." instance=ExtResource("5_an26n")]
+[node name="GrabPointSnap" parent="." groups=["router"] instance=ExtResource("5_an26n")]
+
+[node name="SnapZone_router_point1" parent="." instance=ExtResource("6_n4dij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.068, -0.06, 0.043)
+
+[node name="SnapZone_router_point2" parent="." instance=ExtResource("7_ubx5e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.068, -0.06, 0)
 
 [editable path="router"]

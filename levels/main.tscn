@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://by0xcr14rdghl"]
+[gd_scene load_steps=20 format=3 uid="uid://by0xcr14rdghl"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_mq88t"]
 [ext_resource type="PackedScene" uid="uid://c7sg65ao6ed6i" path="res://enviourment/wall.tscn" id="2_a55se"]
@@ -13,6 +13,8 @@
 [ext_resource type="Resource" uid="uid://bkt6oisr41nb3" path="res://screens/main/slide_1.tres" id="9_r2lvh"]
 [ext_resource type="Resource" uid="uid://l7w06371gstw" path="res://screens/main/slide_2.tres" id="10_k2f35"]
 [ext_resource type="PackedScene" uid="uid://chc2rytfjrw56" path="res://objects/router.tscn" id="10_vl0jo"]
+[ext_resource type="PackedScene" uid="uid://b500xofgyt426" path="res://objects/small_cube_2.tscn" id="13_6gmse"]
+[ext_resource type="PackedScene" uid="uid://c3itqcycxdn65" path="res://objects/small_cube.tscn" id="14_rsq26"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3y2um"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -77,7 +79,7 @@ spot_range = 17.759
 spot_attenuation = 0.39
 spot_angle = 80.0
 
-[node name="Sketchfab_Scene2" parent="." instance=ExtResource("9_2xjkr")]
+[node name="Sketchfab_Scene2" parent="." groups=["router", "small_cube"] instance=ExtResource("9_2xjkr")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.0964895, -1.85)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene2"]
@@ -91,6 +93,12 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("BoxShape3D_a3ymc")
 
+[node name="small_cube2" parent="Sketchfab_Scene2" instance=ExtResource("13_6gmse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15934, 0.893549, -0.488758)
+
 [node name="router" parent="." instance=ExtResource("10_vl0jo")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.438747, 0.962047, -1.59149)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.438747, 1.0286, -1.59149)
 picked_up_layer = 65540
+
+[node name="small_cube" parent="." instance=ExtResource("14_rsq26")]
+transform = Transform3D(1, 0, 0, 0, 0.999348, -0.0361205, 0, 0.0361205, 0.999348, -0.584579, 0.994249, -2.00335)
