@@ -46,4 +46,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2.22253)
 collision_layer = 49153
 scene = ExtResource("7_5p7r3")
 input_gamepad = true
-scene_properties_keys = PackedStringArray()
