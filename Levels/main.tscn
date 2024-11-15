@@ -35,7 +35,7 @@ environment = SubResource("Environment_ansdj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00923049, 0.755468, 3.62152)
 current = true
 
-[node name="Node3D" parent="." instance=ExtResource("2_5ln6c")]
+[node name="table" parent="." instance=ExtResource("2_5ln6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.960333, -0.382787, -2.2372)
 
 [node name="Player" parent="." instance=ExtResource("2_2l1e5")]
