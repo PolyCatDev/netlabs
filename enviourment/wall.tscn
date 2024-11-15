@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7sg65ao6ed6i"]
+
+[ext_resource type="Texture2D" uid="uid://bhiqnu7o2mnph" path="res://textures/wall/plastered_wall_ao_1k.png" id="1_pr18l"]
+[ext_resource type="Texture2D" path="res://textures/wall/painted_plaster_wall_diff_1k.png" id="2_kj2p6"]
+[ext_resource type="Texture2D" uid="uid://dqvbvnmf6md5n" path="res://textures/wall/plastered_wall_nor_gl_1k.png" id="3_4g6iv"]
+[ext_resource type="Texture2D" uid="uid://cn8ffncux854v" path="res://textures/wall/plastered_wall_rough_1k.png" id="4_nggjk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i6pkw"]
+cull_mode = 2
+albedo_color = Color(0.980392, 0.976471, 0.964706, 1)
+albedo_texture = ExtResource("1_pr18l")
+albedo_texture_msdf = true
+roughness_texture = ExtResource("4_nggjk")
+emission_texture = ExtResource("2_kj2p6")
+normal_enabled = true
+normal_texture = ExtResource("3_4g6iv")
+uv1_scale = Vector3(5, 5, 5)
+uv2_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_f4sy3"]
+material = SubResource("StandardMaterial3D_i6pkw")
+size = Vector2(5, 5)
+
+[node name="wall" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_f4sy3")
