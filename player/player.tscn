@@ -20,6 +20,8 @@ tracker = &"left_hand"
 [node name="MovementDirect" parent="LeftCon" instance=ExtResource("2_vks0g")]
 
 [node name="CollisionHandLeft" parent="LeftCon" instance=ExtResource("3_gwxb1")]
+collision_layer = 131076
+collision_mask = 327684
 
 [node name="FunctionPickup" parent="LeftCon" instance=ExtResource("4_00mqp")]
 
@@ -29,7 +31,11 @@ tracker = &"right_hand"
 [node name="RightHand" parent="RightCon" instance=ExtResource("4_rsfaa")]
 
 [node name="CollisionHandRight" parent="RightCon" instance=ExtResource("5_ujm8o")]
+collision_layer = 131076
+collision_mask = 327684
 
 [node name="FunctionPickup" parent="RightCon" instance=ExtResource("4_00mqp")]
 
 [node name="PlayerBody" parent="." instance=ExtResource("6_7pxil")]
+collision_layer = 524290
+collision_mask = 2
