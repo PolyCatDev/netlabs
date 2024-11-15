@@ -11,10 +11,10 @@ size = Vector3(0.3, 0.3, 0.3)
 [node name="Cube" type="Node3D"]
 
 [node name="PickableObject" parent="." instance=ExtResource("1_2tpi3")]
-collision_mask = 196612
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PickableObject"]
 mesh = SubResource("BoxMesh_grfie")
+skeleton = NodePath("")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject"]
 shape = SubResource("BoxShape3D_ln2cq")
