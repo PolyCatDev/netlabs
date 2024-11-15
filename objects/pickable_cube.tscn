@@ -23,8 +23,6 @@ shape = SubResource("BoxShape3D_ln2cq")
 
 [node name="GrabPointHandRight" parent="PickableObject" instance=ExtResource("2_e4jhj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13, 0, 0.03)
-visible = true
 
 [node name="GrabPointHandLeft" parent="PickableObject" instance=ExtResource("3_ip0w5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13, 0, 0.03)
-visible = true
