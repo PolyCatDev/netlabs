@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciuwalv3bw18h"]
+
+[ext_resource type="PackedScene" uid="uid://kn024iy32an1" path="res://objects/simple table/scene.gltf" id="1_x445h"]
+[ext_resource type="PackedScene" uid="uid://dvdhc2xav4mqr" path="res://snapzones/routerSnapzone/router_snapzone.tscn" id="2_kfcha"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_x445h")]
+
+[node name="routerSnapzone" parent="." index="1" instance=ExtResource("2_kfcha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.320519, 0.854528, 0.724203)
