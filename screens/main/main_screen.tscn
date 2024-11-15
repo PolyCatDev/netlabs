@@ -1,13 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc2b0qmvk3rlu"]
+[gd_scene load_steps=11 format=3 uid="uid://cc2b0qmvk3rlu"]
 
-[ext_resource type="Script" path="res://screens/main_screen.gd" id="1_clnln"]
-[ext_resource type="FontFile" uid="uid://d2742ku7aiwai" path="res://assets/kenney_ui-pack-space-expansion/Font/Kenney Future.ttf" id="1_gsllk"]
-[ext_resource type="Resource" uid="uid://c7es57hm280d8" path="res://objects/main_screen.tres" id="2_80mhg"]
-[ext_resource type="FontFile" uid="uid://6rpsos200v8d" path="res://assets/roboto/Roboto-Regular.ttf" id="2_abx8r"]
-[ext_resource type="Texture2D" uid="uid://cgdga02vr6cb5" path="res://icon.svg" id="4_60m1m"]
+[ext_resource type="Script" path="res://screens/main/main_screen.gd" id="1_u0wvw"]
+[ext_resource type="Script" path="res://resources/main_screen_resource.gd" id="2_4h3ea"]
+[ext_resource type="Resource" uid="uid://c7es57hm280d8" path="res://screens/main/slide_0.tres" id="3_yll37"]
+[ext_resource type="FontFile" uid="uid://6rpsos200v8d" path="res://assets/roboto/Roboto-Regular.ttf" id="4_db2iq"]
+[ext_resource type="Resource" uid="uid://bkt6oisr41nb3" path="res://screens/main/slide_1.tres" id="4_pt8is"]
+[ext_resource type="Resource" uid="uid://l7w06371gstw" path="res://screens/main/slide_2.tres" id="5_uxd7n"]
+[ext_resource type="FontFile" uid="uid://d2742ku7aiwai" path="res://assets/kenney_ui-pack-space-expansion/Font/Kenney Future.ttf" id="5_wflov"]
+[ext_resource type="Texture2D" uid="uid://cgdga02vr6cb5" path="res://icon.svg" id="6_qm0nx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pi1a2"]
-font = ExtResource("2_abx8r")
+font = ExtResource("4_db2iq")
 font_size = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3qee"]
@@ -20,8 +23,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_clnln")
-resource = ExtResource("2_80mhg")
+script = ExtResource("1_u0wvw")
+resource = Array[ExtResource("2_4h3ea")]([ExtResource("3_yll37"), ExtResource("4_pt8is"), ExtResource("5_uxd7n")])
 
 [node name="MainLabel" type="Label" parent="."]
 layout_mode = 2
@@ -43,7 +46,7 @@ offset_left = -304.0
 offset_top = -132.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("1_gsllk")
+theme_override_fonts/font = ExtResource("5_wflov")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_x3qee")
 text = " Next"
@@ -51,4 +54,6 @@ text = " Next"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1000, 297.5)
 scale = Vector2(2.375, 3.41406)
-texture = ExtResource("4_60m1m")
+texture = ExtResource("6_qm0nx")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
