@@ -21,6 +21,7 @@ tracker = &"left_hand"
 [node name="LeftHand" parent="LeftCon" instance=ExtResource("1_4eb5s")]
 
 [node name="MovementDirect" parent="LeftCon" instance=ExtResource("2_vks0g")]
+strafe = true
 
 [node name="CollisionHandLeft" parent="LeftCon" instance=ExtResource("3_gwxb1")]
 collision_layer = 131076
