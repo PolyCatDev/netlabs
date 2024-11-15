@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dgskm6qcro3un" path="res://player/player.tscn" id="4_sr7gr"]
 [ext_resource type="PackedScene" uid="uid://6wcfvywpdj82" path="res://screens/start_screen.tscn" id="6_4wf54"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="6_cbrw6"]
-[ext_resource type="PackedScene" path="res://objects/button.tscn" id="7_raitm"]
+[ext_resource type="PackedScene" uid="uid://dq2d7y1nt7e8c" path="res://objects/button.tscn" id="7_raitm"]
 [ext_resource type="PackedScene" uid="uid://cxvadrnjvshp5" path="res://objects/pickable_cube.tscn" id="8_fmfg4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p8bho"]
