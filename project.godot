@@ -13,7 +13,7 @@ config_version=5
 config/name="NetLabs"
 run/main_scene="res://levels/start.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/place_holders/icon.svg"
 
 [autoload]
 

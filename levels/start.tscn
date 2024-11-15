@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dq2d7y1nt7e8c" path="res://objects/button.tscn" id="7_36rmu"]
 [ext_resource type="PackedScene" uid="uid://cxs8badg2v8yg" path="res://objects/door/scene.gltf" id="8_p0j2a"]
 [ext_resource type="PackedScene" uid="uid://by0xcr14rdghl" path="res://levels/main.tscn" id="8_sa5mr"]
-[ext_resource type="PackedScene" uid="uid://ciuwalv3bw18h" path="res://objects/simple table/sketchfab_scene.tscn" id="10_40k17"]
+[ext_resource type="PackedScene" path="res://objects/simple table/sketchfab_scene.tscn" id="10_40k17"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3y2um"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

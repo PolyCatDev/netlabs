@@ -1,34 +1,37 @@
 extends Control
 
 @export var resource: Array[MainScreen] = []
-@onready var main_label = $HSplitContainer/HBoxContainer/Label
+@onready var main_label = $HBoxContainer/HBoxContainer/Label
+@onready var sprite = $HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/TextureRect
 
 var slide = 0
 func _ready() -> void:
 	button_udeflow_overflow_prorection()
 	main_label.text = resource[slide].text
+	sprite.texture = resource[slide].texture
 
 func _on_button_pressed() -> void:
 	slide = slide + 1
 	button_udeflow_overflow_prorection()
 	main_label.text = resource[slide].text
-
+	sprite.texture = resource[slide].texture
+	
 
 func _on_button_back_pressed() -> void:
 	slide = slide - 1
 	button_udeflow_overflow_prorection()
 	main_label.text = resource[slide].text
+	sprite.texture = resource[slide].texture
 	
 
 func button_udeflow_overflow_prorection() -> void:
-	var back_button = $HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/HBoxContainer/ButtonBack
-	var next_button = $HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/HBoxContainer2/ButtonNext
+	var back_button = $HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer/ButtonBack
+	var next_button = $HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer/ButtonNext
 	
-	var back_button_replace = $HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/HBoxContainer/BackButtonReplacer
-	var next_botton_replace = $HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/HBoxContainer2/NextButtonReplacer
+	var back_button_replace = $HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer/BackButtonReplacer
+	var next_botton_replace = $HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer/NextButtonReplacer
 	
 	back_button_replace.visible = false
-	back_button_replace
 	next_botton_replace.visible = false
 	
 	if slide <= 0:

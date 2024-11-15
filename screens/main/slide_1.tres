@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="MainScreen" load_steps=2 format=3 uid="uid://bkt6oisr41nb3"]
+[gd_resource type="Resource" script_class="MainScreen" load_steps=3 format=3 uid="uid://bkt6oisr41nb3"]
 
 [ext_resource type="Script" path="res://resources/main_screen_resource.gd" id="1_4xatu"]
+[ext_resource type="Texture2D" uid="uid://cxa0eb0kt6dqn" path="res://assets/omonus_cat.jpg" id="2_dkuck"]
 
 [resource]
 script = ExtResource("1_4xatu")
-text = "carrot"
+text = "Hmmmmmm"
+texture = ExtResource("2_dkuck")

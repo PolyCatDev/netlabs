@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="MainScreen" load_steps=2 format=3 uid="uid://l7w06371gstw"]
+[gd_resource type="Resource" script_class="MainScreen" load_steps=3 format=3 uid="uid://l7w06371gstw"]
 
 [ext_resource type="Script" path="res://resources/main_screen_resource.gd" id="1_76dlr"]
+[ext_resource type="Texture2D" uid="uid://n6yc6jc0y8gw" path="res://assets/uuummm_cat.jpg" id="2_e4l0t"]
 
 [resource]
 script = ExtResource("1_76dlr")
-text = "orange :3"
+text = "uuuuuuuuuuuuu"
+texture = ExtResource("2_e4l0t")
