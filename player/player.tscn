@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgskm6qcro3un"]
+[gd_scene load_steps=10 format=3 uid="uid://dgskm6qcro3un"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_4eb5s"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_vks0g"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="4_rsfaa"]
 [ext_resource type="PackedScene" uid="uid://c3uoohvnshach" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_right.tscn" id="5_ujm8o"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_7pxil"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="7_0u5a4"]
+[ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="8_43bib"]
 
 [node name="Player" type="XROrigin3D"]
 
@@ -35,6 +37,13 @@ collision_layer = 131076
 collision_mask = 327684
 
 [node name="FunctionPickup" parent="RightCon" instance=ExtResource("4_00mqp")]
+
+[node name="MovementTurn" parent="RightCon" instance=ExtResource("7_0u5a4")]
+turn_mode = 1
+step_turn_angle = 30.0
+
+[node name="MovementJump" parent="RightCon" instance=ExtResource("8_43bib")]
+jump_button_action = "primary_click"
 
 [node name="PlayerBody" parent="." instance=ExtResource("6_7pxil")]
 collision_layer = 524290
