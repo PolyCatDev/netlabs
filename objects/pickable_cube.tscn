@@ -13,6 +13,8 @@ size = Vector3(0.3, 0.3, 0.3)
 [node name="Cube" type="Node3D"]
 
 [node name="PickableObject" parent="." instance=ExtResource("1_2tpi3")]
+collision_layer = 12
+collision_mask = 196620
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PickableObject"]
 mesh = SubResource("BoxMesh_grfie")
