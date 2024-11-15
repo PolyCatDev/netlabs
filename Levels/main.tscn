@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://duq0n8xmlqc21"]
+[gd_scene load_steps=5 format=3 uid="uid://duq0n8xmlqc21"]
 
 [ext_resource type="PackedScene" uid="uid://blfmdgkapv0eb" path="res://Enviourment/Floor.tscn" id="1_6qbc8"]
 
@@ -15,14 +15,6 @@ sky = SubResource("Sky_l41eq")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3wbxm"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kmwuv"]
-size = Vector3(0.3, 0.3, 0.3)
-
-[sub_resource type="BoxMesh" id="BoxMesh_hwxk1"]
-size = Vector3(0.3, 0.3, 0.3)
-
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -37,16 +29,3 @@ environment = SubResource("Environment_ansdj")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00923049, 0.755468, 3.62152)
 current = true
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18275, 0)
-collision_layer = 4
-collision_mask = 4
-physics_material_override = SubResource("PhysicsMaterial_3wbxm")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_kmwuv")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("BoxMesh_hwxk1")
-skeleton = NodePath("../..")
