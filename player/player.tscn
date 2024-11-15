@@ -1,15 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgskm6qcro3un"]
+[gd_scene load_steps=8 format=3 uid="uid://dgskm6qcro3un"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_4eb5s"]
-[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_vks0g"]
 [ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="3_gwxb1"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="4_00mqp"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="4_rsfaa"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="5_huien"]
 [ext_resource type="PackedScene" uid="uid://c3uoohvnshach" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_right.tscn" id="5_ujm8o"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_7pxil"]
-[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="7_0u5a4"]
-[ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="8_43bib"]
 
 [node name="Player" type="XROrigin3D"]
 
@@ -19,9 +16,6 @@
 tracker = &"left_hand"
 
 [node name="LeftHand" parent="LeftCon" instance=ExtResource("1_4eb5s")]
-
-[node name="MovementDirect" parent="LeftCon" instance=ExtResource("2_vks0g")]
-strafe = true
 
 [node name="CollisionHandLeft" parent="LeftCon" instance=ExtResource("3_gwxb1")]
 collision_layer = 131076
@@ -45,13 +39,6 @@ collision_mask = 327684
 
 [node name="FunctionPickup" parent="RightCon" instance=ExtResource("4_00mqp")]
 
-[node name="MovementTurn" parent="RightCon" instance=ExtResource("7_0u5a4")]
-turn_mode = 1
-step_turn_angle = 30.0
-
-[node name="MovementJump" parent="RightCon" instance=ExtResource("8_43bib")]
-jump_button_action = "primary_click"
-
 [node name="FunctionPointer" parent="RightCon" instance=ExtResource("5_huien")]
 show_laser = 2
 laser_length = 1
@@ -60,3 +47,5 @@ collision_mask = 49152
 [node name="PlayerBody" parent="." instance=ExtResource("6_7pxil")]
 collision_layer = 524290
 collision_mask = 2
+player_calibrate_height = false
+player_height_max = 2.0

@@ -36,6 +36,7 @@ environment = SubResource("Environment_ansdj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.960333, -0.382787, -2.2372)
 
 [node name="Player" parent="." instance=ExtResource("4_sr7gr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
 
 [node name="Viewport2Din3D" parent="." instance=ExtResource("6_cbrw6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2.22253)
