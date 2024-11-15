@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://duq0n8xmlqc21"]
+[gd_scene load_steps=13 format=3 uid="uid://duq0n8xmlqc21"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_mq88t"]
 [ext_resource type="PackedScene" uid="uid://c7sg65ao6ed6i" path="res://enviourment/wall.tscn" id="2_7nqhd"]
@@ -6,10 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dgskm6qcro3un" path="res://player/player.tscn" id="4_sr7gr"]
 [ext_resource type="PackedScene" uid="uid://6wcfvywpdj82" path="res://screens/start_screen.tscn" id="6_4wf54"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="6_cbrw6"]
-[ext_resource type="PackedScene" uid="uid://d3ibux7huedtk" path="res://levels/main.tscn" id="7_qm2pq"]
-[ext_resource type="PackedScene" uid="uid://dq2d7y1nt7e8c" path="res://objects/button.tscn" id="7_raitm"]
 [ext_resource type="PackedScene" uid="uid://kn024iy32an1" path="res://objects/simple table/scene.gltf" id="8_5n2rp"]
-[ext_resource type="PackedScene" uid="uid://cxvadrnjvshp5" path="res://objects/pickable_cube.tscn" id="8_fmfg4"]
+[ext_resource type="PackedScene" uid="uid://cshv56y44l05p" path="res://objects/door/scene.gltf" id="8_p0j2a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3y2um"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -37,7 +35,7 @@ environment = SubResource("Environment_gl11v")
 transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, -3.5, -1, 1)
 
 [node name="floor" parent="." instance=ExtResource("2_g1jgc")]
-transform = Transform3D(1.57215, 0, 0, 0, 1.57215, 0, 0, 0, 1.57215, 0.0106039, 4.76837e-07, 0.445307)
+transform = Transform3D(-6.87209e-08, 0, 1.57215, 0, 1.57215, 0, -1.57215, 0, -6.87209e-08, 0.0106039, 4.76837e-07, 0.445307)
 
 [node name="Player" parent="." instance=ExtResource("4_sr7gr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
@@ -48,14 +46,6 @@ collision_layer = 49153
 scene = ExtResource("6_4wf54")
 viewport_size = Vector2(1152, 648)
 input_gamepad = true
-
-[node name="Button" parent="." instance=ExtResource("7_raitm")]
-transform = Transform3D(0.296535, 0, 0, 0, 0.296535, 0, 0, 0, 0.296535, 0.498567, 0.837796, -1.77086)
-change_scene = true
-scene = ExtResource("7_qm2pq")
-
-[node name="Cube" parent="." instance=ExtResource("8_fmfg4")]
-transform = Transform3D(1, 0, 0, 0, 0.999999, 0.00155334, 0, -0.00155334, 0.999999, 0, 1.12991, -1.70638)
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("8_5n2rp")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -1.8)
@@ -74,17 +64,22 @@ shape = SubResource("BoxShape3D_a3ymc")
 [node name="wall" parent="." instance=ExtResource("2_7nqhd")]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, -1, -2.5)
 
+[node name="Sketchfab_Scene" parent="wall" instance=ExtResource("8_p0j2a")]
+transform = Transform3D(0.002, 0, 0, 0, -8.74228e-11, -0.002, 0, 0.002, -8.74228e-11, -1.74505, 2.06413, -1.09112)
+
 [node name="wall4" parent="." instance=ExtResource("2_7nqhd")]
 transform = Transform3D(-2, -3.01992e-07, 1.32005e-14, 0, -8.74228e-08, -2, 3.01992e-07, -2, 8.74228e-08, 0, -1, 2.44793)
 
 [node name="wall3" parent="." instance=ExtResource("2_7nqhd")]
-transform = Transform3D(-1.27795e-07, -2.92362, 1.27795e-07, 0, -1.27795e-07, -2.92362, 2.92362, -1.27795e-07, 5.58612e-15, 2.2, -3.3, 1.003)
+transform = Transform3D(-1.44766e-07, -3.31186, 1.44766e-07, 0, -1.44766e-07, -3.31186, 3.31186, -1.44766e-07, 6.32792e-15, 2.2, -3.3, 1.003)
 
 [node name="celing" parent="." instance=ExtResource("2_7nqhd")]
 transform = Transform3D(-1.27795e-07, 2.55591e-07, 2.92362, 0, -2.92362, 2.55591e-07, 2.92362, 1.11722e-14, 1.27795e-07, 2.993, 3.37583, 1.003)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0.242521, 3.16108, 0.564009)
-light_color = Color(1, 0.960784, 0.713726, 1)
-spot_range = 10.0
-spot_angle = 120.0
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.308433, 3.44887, -0.269898)
+shadow_enabled = true
+shadow_bias = 0.0
+spot_range = 17.759
+spot_attenuation = 0.39
+spot_angle = 80.0

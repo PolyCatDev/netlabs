@@ -9,7 +9,7 @@ albedo_texture = ExtResource("1_8ivsy")
 roughness_texture = ExtResource("3_e2107")
 normal_enabled = true
 normal_texture = ExtResource("2_1voyy")
-uv1_scale = Vector3(3, 3, 3)
+uv1_scale = Vector3(4, 4, 4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jfssx"]
 material = SubResource("StandardMaterial3D_xqs24")
