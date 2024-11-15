@@ -1,24 +1,26 @@
-[gd_scene load_steps=13 format=3 uid="uid://duq0n8xmlqc21"]
+[gd_scene load_steps=15 format=3 uid="uid://duq0n8xmlqc21"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_mq88t"]
+[ext_resource type="PackedScene" uid="uid://c7sg65ao6ed6i" path="res://enviourment/wall.tscn" id="2_7nqhd"]
 [ext_resource type="PackedScene" uid="uid://blfmdgkapv0eb" path="res://enviourment/Floor.tscn" id="2_g1jgc"]
 [ext_resource type="PackedScene" uid="uid://dgskm6qcro3un" path="res://player/player.tscn" id="4_sr7gr"]
 [ext_resource type="PackedScene" uid="uid://6wcfvywpdj82" path="res://screens/start_screen.tscn" id="6_4wf54"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="6_cbrw6"]
+[ext_resource type="PackedScene" uid="uid://d3ibux7huedtk" path="res://levels/main.tscn" id="7_qm2pq"]
 [ext_resource type="PackedScene" uid="uid://dq2d7y1nt7e8c" path="res://objects/button.tscn" id="7_raitm"]
 [ext_resource type="PackedScene" uid="uid://kn024iy32an1" path="res://objects/simple table/scene.gltf" id="8_5n2rp"]
 [ext_resource type="PackedScene" uid="uid://cxvadrnjvshp5" path="res://objects/pickable_cube.tscn" id="8_fmfg4"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p8bho"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3y2um"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_l41eq"]
-sky_material = SubResource("ProceduralSkyMaterial_p8bho")
+[sub_resource type="Sky" id="Sky_wc2tn"]
+sky_material = SubResource("ProceduralSkyMaterial_3y2um")
 
-[sub_resource type="Environment" id="Environment_ansdj"]
+[sub_resource type="Environment" id="Environment_gl11v"]
 background_mode = 2
-sky = SubResource("Sky_l41eq")
+sky = SubResource("Sky_wc2tn")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -28,21 +30,20 @@ size = Vector3(1, 0.1, 2)
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_mq88t")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.689746, 0.627048, -0.362025, -9.8385e-09, 0.5, 0.866025, 0.724051, -0.597337, 0.344873, 0, 0, 0)
-shadow_enabled = true
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_ansdj")
+environment = SubResource("Environment_gl11v")
+
+[node name="wall2" parent="." instance=ExtResource("2_7nqhd")]
+transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, -3.5, -1, 1)
 
 [node name="floor" parent="." instance=ExtResource("2_g1jgc")]
-transform = Transform3D(1.57215, 0, 0, 0, 1.57215, 0, 0, 0, 1.57215, 0, 0, 0)
+transform = Transform3D(1.57215, 0, 0, 0, 1.57215, 0, 0, 0, 1.57215, 0.0106039, 4.76837e-07, 0.445307)
 
 [node name="Player" parent="." instance=ExtResource("4_sr7gr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
 
 [node name="Viewport2Din3D" parent="." instance=ExtResource("6_cbrw6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -2.223)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93941, 1.5, -2.223)
 collision_layer = 49153
 scene = ExtResource("6_4wf54")
 viewport_size = Vector2(1152, 648)
@@ -50,6 +51,8 @@ input_gamepad = true
 
 [node name="Button" parent="." instance=ExtResource("7_raitm")]
 transform = Transform3D(0.296535, 0, 0, 0, 0.296535, 0, 0, 0, 0.296535, 0.498567, 0.837796, -1.77086)
+change_scene = true
+scene = ExtResource("7_qm2pq")
 
 [node name="Cube" parent="." instance=ExtResource("8_fmfg4")]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0.00155334, 0, -0.00155334, 0.999999, 0, 1.12991, -1.70638)
@@ -67,3 +70,21 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("BoxShape3D_a3ymc")
+
+[node name="wall" parent="." instance=ExtResource("2_7nqhd")]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, -1, -2.5)
+
+[node name="wall4" parent="." instance=ExtResource("2_7nqhd")]
+transform = Transform3D(-2, -3.01992e-07, 1.32005e-14, 0, -8.74228e-08, -2, 3.01992e-07, -2, 8.74228e-08, 0, -1, 2.44793)
+
+[node name="wall3" parent="." instance=ExtResource("2_7nqhd")]
+transform = Transform3D(-1.27795e-07, -2.92362, 1.27795e-07, 0, -1.27795e-07, -2.92362, 2.92362, -1.27795e-07, 5.58612e-15, 2.2, -3.3, 1.003)
+
+[node name="celing" parent="." instance=ExtResource("2_7nqhd")]
+transform = Transform3D(-1.27795e-07, 2.55591e-07, 2.92362, 0, -2.92362, 2.55591e-07, 2.92362, 1.11722e-14, 1.27795e-07, 2.993, 3.37583, 1.003)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0.242521, 3.16108, 0.564009)
+light_color = Color(1, 0.960784, 0.713726, 1)
+spot_range = 10.0
+spot_angle = 120.0
