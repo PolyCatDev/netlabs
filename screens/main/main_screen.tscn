@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cc2b0qmvk3rlu"]
+[gd_scene load_steps=15 format=3 uid="uid://cc2b0qmvk3rlu"]
 
 [ext_resource type="Script" path="res://screens/main/main_screen.gd" id="1_u0wvw"]
 [ext_resource type="Script" path="res://resources/main_screen_resource.gd" id="2_4h3ea"]
@@ -9,12 +9,20 @@
 [ext_resource type="FontFile" uid="uid://d2742ku7aiwai" path="res://assets/kenney_ui-pack-space-expansion/Font/Kenney Future.ttf" id="5_wflov"]
 [ext_resource type="Texture2D" uid="uid://cgdga02vr6cb5" path="res://icon.svg" id="6_qm0nx"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60h58"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_pi1a2"]
 font = ExtResource("4_db2iq")
 font_size = 24
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ei4y"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3qee"]
 bg_color = Color(0.114897, 0.114897, 0.114897, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_76pua"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y8eeb"]
 
 [node name="main_screen_2d" type="Control"]
 layout_mode = 3
@@ -26,34 +34,118 @@ grow_vertical = 2
 script = ExtResource("1_u0wvw")
 resource = Array[ExtResource("2_4h3ea")]([ExtResource("3_yll37"), ExtResource("4_pt8is"), ExtResource("5_uxd7n")])
 
-[node name="MainLabel" type="Label" parent="."]
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
-offset_right = 844.0
-offset_bottom = 648.0
+
+[node name="PaddLeft" type="Panel" parent="HSplitContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_60h58")
+
+[node name="Label" type="Label" parent="HSplitContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
 size_flags_horizontal = 4
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 label_settings = SubResource("LabelSettings_pi1a2")
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -304.0
-offset_top = -132.0
-grow_horizontal = 0
-grow_vertical = 0
+[node name="PaddRight" type="Panel" parent="HSplitContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0ei4y")
+
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="PaddRight3" type="Panel" parent="HSplitContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0ei4y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="PaddRight4" type="Panel" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0ei4y")
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 360)
+layout_mode = 2
+texture = ExtResource("6_qm0nx")
+
+[node name="PaddRight6" type="Panel" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0ei4y")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="ButtonBack" type="Button" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("5_wflov")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_x3qee")
+text = " Back
+"
+
+[node name="BackButtonReplacer" type="Panel" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(182, 57)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_76pua")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="ButtonNext" type="Button" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("5_wflov")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_x3qee")
 text = " Next"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1000, 297.5)
-scale = Vector2(2.375, 3.41406)
-texture = ExtResource("6_qm0nx")
+[node name="NextButtonReplacer" type="Panel" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/HBoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(182, 57)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_y8eeb")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="PaddRight5" type="Panel" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0ei4y")
+
+[node name="PaddRight2" type="Panel" parent="HSplitContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0ei4y")
+
+[connection signal="pressed" from="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/HBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/HBoxContainer2/ButtonNext" to="." method="_on_button_pressed"]
