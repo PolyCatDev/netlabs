@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://duq0n8xmlqc21"]
+[gd_scene load_steps=6 format=3 uid="uid://duq0n8xmlqc21"]
 
 [ext_resource type="PackedScene" uid="uid://blfmdgkapv0eb" path="res://Enviourment/Floor.tscn" id="1_6qbc8"]
 [ext_resource type="PackedScene" uid="uid://dgskm6qcro3un" path="res://player/player.tscn" id="2_2l1e5"]
@@ -30,3 +30,5 @@ environment = SubResource("Environment_ansdj")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00923049, 0.755468, 3.62152)
 current = true
+
+[node name="Player" parent="." instance=ExtResource("2_2l1e5")]
