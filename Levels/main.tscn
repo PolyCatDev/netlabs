@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Levels/main.gd" id="1_1x8gp"]
 [ext_resource type="PackedScene" uid="uid://blfmdgkapv0eb" path="res://Enviourment/Floor.tscn" id="1_6qbc8"]
 [ext_resource type="PackedScene" uid="uid://dgskm6qcro3un" path="res://player/player.tscn" id="2_2l1e5"]
-[ext_resource type="PackedScene" path="res://objects/table.tscn" id="2_5ln6c"]
+[ext_resource type="PackedScene" uid="uid://y4hyhu4r7cd6" path="res://objects/table.tscn" id="2_5ln6c"]
 [ext_resource type="PackedScene" uid="uid://cxvadrnjvshp5" path="res://objects/pickable_cube.tscn" id="5_0o1qp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p8bho"]
@@ -36,9 +36,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00923049, 0.755468, 3.62152
 current = true
 
 [node name="Node3D" parent="." instance=ExtResource("2_5ln6c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.960333, -0.705773, -2.2372)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.960333, -0.382787, -2.2372)
 
 [node name="Player" parent="." instance=ExtResource("2_2l1e5")]
 
 [node name="Cube" parent="." instance=ExtResource("5_0o1qp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.863182, -1.62247)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1623, -1.62247)
