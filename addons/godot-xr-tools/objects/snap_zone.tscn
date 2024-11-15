@@ -1,15 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce7vysyvondf8"]
+[gd_scene load_steps=4 format=3 uid="uid://ce7vysyvondf8"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/snap_zone.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="2_4vcqw"]
 
 [sub_resource type="SphereShape3D" id="1"]
 resource_local_to_scene = true
 radius = 0.1
 
-[node name="SnapZone" type="Area3D"]
+[node name="SnapZone_router" type="Area3D" groups=["router"]]
 collision_layer = 4
 collision_mask = 65540
 script = ExtResource("1")
+snap_mode = 1
+snap_require = "router"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("1")
@@ -18,6 +21,8 @@ shape = SubResource("1")
 unit_size = 3.0
 max_db = 1.0
 max_distance = 100.0
+
+[node name="HighlightRing" parent="." instance=ExtResource("2_4vcqw")]
 
 [connection signal="body_entered" from="." to="." method="_on_snap_zone_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_snap_zone_body_exited"]
