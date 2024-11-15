@@ -1,12 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://duq0n8xmlqc21"]
+[gd_scene load_steps=13 format=3 uid="uid://duq0n8xmlqc21"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_mq88t"]
 [ext_resource type="PackedScene" uid="uid://blfmdgkapv0eb" path="res://enviourment/Floor.tscn" id="2_g1jgc"]
-[ext_resource type="PackedScene" uid="uid://y4hyhu4r7cd6" path="res://objects/table.tscn" id="3_m0jh5"]
 [ext_resource type="PackedScene" uid="uid://dgskm6qcro3un" path="res://player/player.tscn" id="4_sr7gr"]
 [ext_resource type="PackedScene" uid="uid://6wcfvywpdj82" path="res://screens/start_screen.tscn" id="6_4wf54"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="6_cbrw6"]
 [ext_resource type="PackedScene" uid="uid://dq2d7y1nt7e8c" path="res://objects/button.tscn" id="7_raitm"]
+[ext_resource type="PackedScene" uid="uid://kn024iy32an1" path="res://objects/simple table/scene.gltf" id="8_5n2rp"]
 [ext_resource type="PackedScene" uid="uid://cxvadrnjvshp5" path="res://objects/pickable_cube.tscn" id="8_fmfg4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p8bho"]
@@ -22,6 +22,9 @@ sky = SubResource("Sky_l41eq")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_a3ymc"]
+size = Vector3(1, 0.1, 2)
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_mq88t")
 
@@ -33,9 +36,7 @@ shadow_enabled = true
 environment = SubResource("Environment_ansdj")
 
 [node name="floor" parent="." instance=ExtResource("2_g1jgc")]
-
-[node name="table" parent="." instance=ExtResource("3_m0jh5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.960333, -0.382787, -2.2372)
+transform = Transform3D(1.57215, 0, 0, 0, 1.57215, 0, 0, 0, 1.57215, 0, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("4_sr7gr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
@@ -49,7 +50,21 @@ input_gamepad = true
 scene_properties_keys = PackedStringArray()
 
 [node name="Button" parent="." instance=ExtResource("7_raitm")]
-transform = Transform3D(0.296535, 0, 0, 0, 0.296535, 0, 0, 0, 0.296535, 0.498567, 0.881011, -1.77086)
+transform = Transform3D(0.296535, 0, 0, 0, 0.296535, 0, 0, 0, 0.296535, 0.498567, 0.837796, -1.77086)
 
 [node name="Cube" parent="." instance=ExtResource("8_fmfg4")]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0.00155334, 0, -0.00155334, 0.999999, 0, 1.12991, -1.70638)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("8_5n2rp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -1.8)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene"]
+collision_layer = 5
+collision_mask = 5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_Scene/StaticBody3D"]
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("BoxShape3D_a3ymc")
