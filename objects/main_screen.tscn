@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhhf5xnulmlcd"]
+
+[ext_resource type="Script" path="res://objects/main_screen.gd" id="1_duwwl"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_mluww"]
+[ext_resource type="PackedScene" uid="uid://cc2b0qmvk3rlu" path="res://screens/main_screen.tscn" id="2_iajya"]
+
+[node name="MainScreen" type="Node3D"]
+script = ExtResource("1_duwwl")
+text = "adasdsadasdas"
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("1_mluww")]
+scene = ExtResource("2_iajya")
+viewport_size = Vector2(1152, 648)

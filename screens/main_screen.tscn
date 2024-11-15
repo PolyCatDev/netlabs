@@ -1,3 +1,54 @@
-[gd_scene format=3 uid="uid://cc2b0qmvk3rlu"]
+[gd_scene load_steps=8 format=3 uid="uid://cc2b0qmvk3rlu"]
 
-[node name="MainScreen" type="Node2D"]
+[ext_resource type="Script" path="res://screens/main_screen.gd" id="1_clnln"]
+[ext_resource type="FontFile" uid="uid://d2742ku7aiwai" path="res://assets/kenney_ui-pack-space-expansion/Font/Kenney Future.ttf" id="1_gsllk"]
+[ext_resource type="Script" path="res://objects/main_screen.gd" id="2_1cbxx"]
+[ext_resource type="FontFile" uid="uid://6rpsos200v8d" path="res://assets/roboto/Roboto-Regular.ttf" id="2_abx8r"]
+[ext_resource type="Texture2D" uid="uid://cgdga02vr6cb5" path="res://icon.svg" id="4_60m1m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pi1a2"]
+font = ExtResource("2_abx8r")
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3qee"]
+bg_color = Color(0.114897, 0.114897, 0.114897, 1)
+
+[node name="main_screen_2d" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_clnln")
+data_script = ExtResource("2_1cbxx")
+
+[node name="MainLabel" type="Label" parent="."]
+layout_mode = 2
+offset_right = 844.0
+offset_bottom = 648.0
+size_flags_horizontal = 4
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+label_settings = SubResource("LabelSettings_pi1a2")
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -304.0
+offset_top = -132.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_gsllk")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_x3qee")
+text = " Next"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1000, 297.5)
+scale = Vector2(2.375, 3.41406)
+texture = ExtResource("4_60m1m")
