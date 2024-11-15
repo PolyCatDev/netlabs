@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var anim = $AnimationPlayer
+@export_group("Scene Switch")
 @export var change_scene = false
 @export var scene : PackedScene: set = set_scene
 
