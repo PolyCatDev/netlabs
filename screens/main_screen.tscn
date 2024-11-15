@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://screens/main_screen.gd" id="1_clnln"]
 [ext_resource type="FontFile" uid="uid://d2742ku7aiwai" path="res://assets/kenney_ui-pack-space-expansion/Font/Kenney Future.ttf" id="1_gsllk"]
-[ext_resource type="Script" path="res://objects/main_screen.gd" id="2_1cbxx"]
+[ext_resource type="Resource" uid="uid://c7es57hm280d8" path="res://objects/main_screen.tres" id="2_80mhg"]
 [ext_resource type="FontFile" uid="uid://6rpsos200v8d" path="res://assets/roboto/Roboto-Regular.ttf" id="2_abx8r"]
 [ext_resource type="Texture2D" uid="uid://cgdga02vr6cb5" path="res://icon.svg" id="4_60m1m"]
 
@@ -21,7 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_clnln")
-data_script = ExtResource("2_1cbxx")
+resource = ExtResource("2_80mhg")
 
 [node name="MainLabel" type="Label" parent="."]
 layout_mode = 2

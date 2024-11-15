@@ -1,5 +1,11 @@
 extends Control
 
-@export var data_script: Script
-
+@export var resource: MainScreen
 @onready var main_label = $MainLabel
+
+func _ready() -> void:
+	main_label.text = resource.text
+	
+
+
+	
