@@ -1,21 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvdhc2xav4mqr"]
+[gd_scene load_steps=7 format=3 uid="uid://dvdhc2xav4mqr"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/snap_zone.gd" id="1_o7bou"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.gd" id="2_17cp6"]
-[ext_resource type="PackedScene" uid="uid://chc2rytfjrw56" path="res://objects/router.tscn" id="3_ofugj"]
+[ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="2_hwk41"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/highlight/highlight_visible.gd" id="3_jai1v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a358h"]
-size = Vector3(0.1, 0.1, 0.1)
+size = Vector3(0.1, 0.0401367, 0.149268)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_c060o"]
+transparency = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_ohrit"]
+material = SubResource("ORMMaterial3D_c060o")
+size = Vector3(0.1, 0.04, 0.15)
 
 [node name="routerSnapzone" type="Area3D"]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_o7bou")
+snap_mode = 1
 snap_require = "router"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0533234, 7.32373e-05)
 shape = SubResource("BoxShape3D_a358h")
 
-[node name="XRToolsHighlightRing" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00407887, 0.00535345, 0.0863429)
-script = ExtResource("2_17cp6")
+[node name="HighlightRing" parent="." instance=ExtResource("2_hwk41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0473571, 0)
 
-[node name="router" parent="." instance=ExtResource("3_ofugj")]
+[node name="XRToolsHighlightVisible" type="Node3D" parent="."]
+script = ExtResource("3_jai1v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XRToolsHighlightVisible"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0529882, 0)
+mesh = SubResource("BoxMesh_ohrit")
+skeleton = NodePath("../../HighlightRing")
