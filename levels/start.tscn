@@ -32,7 +32,7 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ansdj")
 
-[node name="MeshInstance3D" parent="." instance=ExtResource("2_g1jgc")]
+[node name="floor" parent="." instance=ExtResource("2_g1jgc")]
 
 [node name="table" parent="." instance=ExtResource("3_m0jh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.960333, -0.382787, -2.2372)
