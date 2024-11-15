@@ -30,6 +30,7 @@ collision_mask = 327684
 [node name="FunctionPickup" parent="LeftCon" instance=ExtResource("4_00mqp")]
 
 [node name="FunctionPointer" parent="LeftCon" instance=ExtResource("5_huien")]
+show_laser = 2
 laser_length = 1
 collision_mask = 49152
 
@@ -52,6 +53,7 @@ step_turn_angle = 30.0
 jump_button_action = "primary_click"
 
 [node name="FunctionPointer" parent="RightCon" instance=ExtResource("5_huien")]
+show_laser = 2
 laser_length = 1
 collision_mask = 49152
 
