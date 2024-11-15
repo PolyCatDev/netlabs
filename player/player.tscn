@@ -60,3 +60,5 @@ collision_mask = 49152
 [node name="PlayerBody" parent="." instance=ExtResource("6_7pxil")]
 collision_layer = 524290
 collision_mask = 2
+player_calibrate_height = false
+player_height_max = 2.0
