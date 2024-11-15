@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="MainMenu" load_steps=2 format=3 uid="uid://c7es57hm280d8"]
+
+[ext_resource type="Script" path="res://resources/main_screen_resource.gd" id="1_o5o2p"]
+
+[resource]
+script = ExtResource("1_o5o2p")
+text = "banana"
