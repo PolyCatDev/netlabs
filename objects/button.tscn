@@ -76,6 +76,7 @@ script = ExtResource("1_hnesr")
 
 [node name="Top" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+layers = 9
 material_override = SubResource("StandardMaterial3D_biv3d")
 mesh = SubResource("BoxMesh_xu0k4")
 
