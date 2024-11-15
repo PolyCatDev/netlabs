@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://duq0n8xmlqc21"]
+[gd_scene load_steps=12 format=3 uid="uid://duq0n8xmlqc21"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_mq88t"]
 [ext_resource type="PackedScene" uid="uid://blfmdgkapv0eb" path="res://enviourment/Floor.tscn" id="2_g1jgc"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dgskm6qcro3un" path="res://player/player.tscn" id="4_sr7gr"]
 [ext_resource type="PackedScene" uid="uid://6wcfvywpdj82" path="res://screens/start_screen.tscn" id="6_4wf54"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="6_cbrw6"]
+[ext_resource type="PackedScene" path="res://objects/button.tscn" id="7_raitm"]
+[ext_resource type="PackedScene" uid="uid://cxvadrnjvshp5" path="res://objects/pickable_cube.tscn" id="8_fmfg4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p8bho"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -39,9 +41,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.960333, -0.382787, -2.2372
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
 
 [node name="Viewport2Din3D" parent="." instance=ExtResource("6_cbrw6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1.5, -2.223)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -2.223)
 collision_layer = 49153
 scene = ExtResource("6_4wf54")
 viewport_size = Vector2(1152, 648)
 input_gamepad = true
 scene_properties_keys = PackedStringArray()
+
+[node name="Button" parent="." instance=ExtResource("7_raitm")]
+transform = Transform3D(0.296535, 0, 0, 0, 0.296535, 0, 0, 0, 0.296535, 0.498567, 0.881011, -1.77086)
+
+[node name="Cube" parent="." instance=ExtResource("8_fmfg4")]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0.00155334, 0, -0.00155334, 0.999999, 0, 1.12991, -1.70638)
