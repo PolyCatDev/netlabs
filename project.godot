@@ -27,3 +27,8 @@ enabled=PackedStringArray("res://addons/SignalVisualizer/plugin.cfg", "res://add
 [filesystem]
 
 import/blender/enabled=false
+
+[xr]
+
+openxr/enabled=true
+shaders/enabled=true
