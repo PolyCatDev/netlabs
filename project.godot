@@ -29,6 +29,10 @@ enabled=PackedStringArray("res://addons/SignalVisualizer/plugin.cfg", "res://add
 
 import/blender/enabled=false
 
+[physics]
+
+common/physics_ticks_per_second=90
+
 [xr]
 
 openxr/enabled=true
