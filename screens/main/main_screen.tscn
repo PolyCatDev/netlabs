@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cc2b0qmvk3rlu"]
+[gd_scene load_steps=14 format=3 uid="uid://cc2b0qmvk3rlu"]
 
 [ext_resource type="Script" path="res://screens/main/main_screen.gd" id="1_u0wvw"]
 [ext_resource type="Script" path="res://resources/main_screen_resource.gd" id="2_4h3ea"]
@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://bkt6oisr41nb3" path="res://screens/main/slide_1.tres" id="4_pt8is"]
 [ext_resource type="Resource" uid="uid://l7w06371gstw" path="res://screens/main/slide_2.tres" id="5_uxd7n"]
 [ext_resource type="FontFile" uid="uid://d2742ku7aiwai" path="res://assets/kenney_ui-pack-space-expansion/Font/Kenney Future.ttf" id="5_wflov"]
-[ext_resource type="Texture2D" uid="uid://cgdga02vr6cb5" path="res://icon.svg" id="6_qm0nx"]
+[ext_resource type="Texture2D" uid="uid://cgdga02vr6cb5" path="res://assets/place_holders/icon.svg" id="6_qm0nx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60h58"]
 
@@ -16,9 +16,6 @@ font = ExtResource("4_db2iq")
 font_size = 24
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ei4y"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3qee"]
-bg_color = Color(0.114897, 0.114897, 0.114897, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_76pua"]
 
@@ -34,8 +31,7 @@ grow_vertical = 2
 script = ExtResource("1_u0wvw")
 resource = Array[ExtResource("2_4h3ea")]([ExtResource("3_yll37"), ExtResource("4_pt8is"), ExtResource("5_uxd7n")])
 
-[node name="HSplitContainer" type="HSplitContainer" parent="."]
-clip_contents = true
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,15 +39,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="PaddLeft" type="Panel" parent="HSplitContainer/HBoxContainer"]
+[node name="PaddLeft" type="Panel" parent="HBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_60h58")
 
-[node name="Label" type="Label" parent="HSplitContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -59,93 +55,97 @@ text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 label_settings = SubResource("LabelSettings_pi1a2")
 autowrap_mode = 2
 
-[node name="PaddRight" type="Panel" parent="HSplitContainer/HBoxContainer"]
+[node name="PaddRight" type="Panel" parent="HBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_0ei4y")
 
-[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
-[node name="PaddRight3" type="Panel" parent="HSplitContainer/MarginContainer/HBoxContainer"]
+[node name="PaddRight3" type="Panel" parent="HBoxContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_0ei4y")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
-[node name="PaddRight4" type="Panel" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="PaddRight4" type="Panel" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_0ei4y")
 
-[node name="TextureRect" type="TextureRect" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 360)
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 340)
 layout_mode = 2
 texture = ExtResource("6_qm0nx")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="PaddRight6" type="Panel" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="PaddRight6" type="Panel" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_0ei4y")
 
-[node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="ButtonBack" type="Button" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/HBoxContainer"]
+[node name="ButtonBack" type="Button" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("5_wflov")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_x3qee")
 text = " Back
 "
 
-[node name="BackButtonReplacer" type="Panel" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/HBoxContainer"]
+[node name="BackButtonReplacer" type="Panel" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(182, 57)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_76pua")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer"]
+[node name="PaddRight4" type="Panel" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(5, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0ei4y")
 
-[node name="ButtonNext" type="Button" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/HBoxContainer2"]
+[node name="ButtonNext" type="Button" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("5_wflov")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_x3qee")
 text = " Next"
 
-[node name="NextButtonReplacer" type="Panel" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/HBoxContainer2"]
+[node name="NextButtonReplacer" type="Panel" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(182, 57)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_y8eeb")
 
-[node name="PaddRight5" type="Panel" parent="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="PaddRight5" type="Panel" parent="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_0ei4y")
 
-[node name="PaddRight2" type="Panel" parent="HSplitContainer/MarginContainer/HBoxContainer"]
+[node name="PaddRight2" type="Panel" parent="HBoxContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_0ei4y")
 
-[connection signal="pressed" from="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/HBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
-[connection signal="pressed" from="HSplitContainer/MarginContainer/HBoxContainer/VBoxContainer/HSplitContainer/HBoxContainer2/ButtonNext" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer/ButtonNext" to="." method="_on_button_pressed"]

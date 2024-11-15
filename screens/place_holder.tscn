@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://wqepqc4nene4"]
 
-[ext_resource type="Texture2D" uid="uid://cgdga02vr6cb5" path="res://icon.svg" id="1_rfyl4"]
+[ext_resource type="Texture2D" uid="uid://cgdga02vr6cb5" path="res://assets/place_holders/icon.svg" id="1_rfyl4"]
 
 [node name="PlaceHolder" type="Node2D"]
 
