@@ -47,7 +47,7 @@ transform = Transform3D(-6.87209e-08, 0, 1.57215, 0, 1.57215, 0, -1.57215, 0, -6
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, -1, -2.5)
 
 [node name="Sketchfab_Scene" parent="wall" instance=ExtResource("8_q4nyh")]
-transform = Transform3D(5.73206e-16, 1.31134e-08, 0.3, 0.3, -1.31134e-08, 0, 1.31134e-08, 0.3, -1.31134e-08, -1.71993, 2.06014, -1.25992)
+transform = Transform3D(5.73206e-16, 1.31134e-08, 0.3, 0.3, -1.31134e-08, 0, 1.31134e-08, 0.3, -1.31134e-08, -1.68843, 2.06014, -1.25992)
 
 [node name="wall2" parent="." instance=ExtResource("2_a55se")]
 transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, -3.5, -1, 1)
