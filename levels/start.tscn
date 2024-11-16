@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://duq0n8xmlqc21"]
+[gd_scene load_steps=12 format=3 uid="uid://duq0n8xmlqc21"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_mq88t"]
 [ext_resource type="PackedScene" uid="uid://c7sg65ao6ed6i" path="res://enviourment/wall.tscn" id="2_7nqhd"]
@@ -11,30 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://by0xcr14rdghl" path="res://levels/main.tscn" id="8_sa5mr"]
 [ext_resource type="PackedScene" uid="uid://dij46d55vw0n0" path="res://objects/simple table/table_2.tscn" id="10_2vcbt"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3y2um"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_wc2tn"]
-sky_material = SubResource("ProceduralSkyMaterial_3y2um")
-
-[sub_resource type="Environment" id="Environment_gl11v"]
-background_mode = 2
-sky = SubResource("Sky_wc2tn")
-tonemap_mode = 2
-glow_enabled = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_a3ymc"]
-size = Vector3(1, 0.1, 2)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckqg7"]
+albedo_color = Color(0.493545, 0.493546, 0.493546, 1)
 
 [node name="Node3D2" type="Node3D"]
 script = ExtResource("1_mq88t")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_gl11v")
-
-[node name="wall2" parent="." instance=ExtResource("2_7nqhd")]
-transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, -3.5, -1, 1)
 
 [node name="floor" parent="." instance=ExtResource("2_g1jgc")]
 transform = Transform3D(-6.87209e-08, 0, 1.57215, 0, 1.57215, 0, -1.57215, 0, -6.87209e-08, 0.0106039, 4.76837e-07, 0.445307)
@@ -42,60 +23,45 @@ transform = Transform3D(-6.87209e-08, 0, 1.57215, 0, 1.57215, 0, -1.57215, 0, -6
 [node name="Player" parent="." instance=ExtResource("4_sr7gr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
 
-[node name="Viewport2Din3D" parent="." instance=ExtResource("6_cbrw6")]
+[node name="Title" parent="." instance=ExtResource("6_cbrw6")]
 transform = Transform3D(0.586822, 0, 0, 0, 0.586822, 0, 0, 0, 0.586822, 0.0791706, 1.49309, -2.41143)
 collision_layer = 49153
 scene = ExtResource("6_4wf54")
 viewport_size = Vector2(1152, 648)
 input_gamepad = true
+material = SubResource("StandardMaterial3D_ckqg7")
+transparent = 0
+unshaded = true
 
-[node name="Button" parent="Viewport2Din3D" instance=ExtResource("7_36rmu")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.13661, -0.70409, 0.108508)
-change_scene = true
-scene = ExtResource("8_sa5mr")
-
-[node name="wall" parent="." instance=ExtResource("2_7nqhd")]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, -1, -2.5)
-
-[node name="Sketchfab_Scene" parent="wall" instance=ExtResource("8_p0j2a")]
-transform = Transform3D(5.73206e-16, 1.31134e-08, 0.3, 0.3, -1.31134e-08, 0, 1.31134e-08, 0.3, -1.31134e-08, -1.71993, 2.06014, -1.25992)
-
-[node name="wall4" parent="." instance=ExtResource("2_7nqhd")]
-transform = Transform3D(-2, -3.01992e-07, 1.32005e-14, 0, -8.74228e-08, -2, 3.01992e-07, -2, 8.74228e-08, 0, -1, 2.44793)
-
-[node name="wall3" parent="." instance=ExtResource("2_7nqhd")]
-transform = Transform3D(-1.44766e-07, -3.31186, 1.44766e-07, 0, -1.44766e-07, -3.31186, 3.31186, -1.44766e-07, 6.32792e-15, 2.2, -3.3, 1.003)
-
-[node name="celing" parent="." instance=ExtResource("2_7nqhd")]
-transform = Transform3D(-1.27795e-07, 2.55591e-07, 2.92362, 0, -2.92362, 2.55591e-07, 2.92362, 1.11722e-14, 1.27795e-07, 2.993, 3.37583, 1.003)
-
-[node name="table2" parent="." instance=ExtResource("10_2vcbt")]
+[node name="TableNoColision" parent="." instance=ExtResource("10_2vcbt")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.37114e-08, 0, -0.154782, -1.8)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="table2"]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 0.833333, 0, 1.06581e-14, 0, 1, 0, 0.133, 0)
-collision_layer = 5
-collision_mask = 5
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="table2/StaticBody3D"]
-transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0.75, 0)
-shape = SubResource("BoxShape3D_a3ymc")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="table2"]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 0.833333, 0, 1.06581e-14, 0, 1, 0, 0.128985, 0)
-skeleton = NodePath("")
 
 [node name="Button" parent="." instance=ExtResource("7_36rmu")]
 transform = Transform3D(-2.00957e-08, 0, 0.459736, 0, 0.459736, 0, -0.459736, 0, -2.00957e-08, -5.55112e-16, 0.791542, -1.81734)
 change_scene = true
 scene = ExtResource("8_sa5mr")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 8.35187e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, -0.214427, 2.57196, -0.62444)
-light_color = Color(1, 0.776471, 0.592157, 1)
-shadow_enabled = true
-shadow_bias = 0.0
-shadow_reverse_cull_face = true
-spot_range = 17.759
-spot_attenuation = 0.39
-spot_angle = 80.0
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="wall2" parent="Walls" instance=ExtResource("2_7nqhd")]
+transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, -3.5, -1, 1)
+
+[node name="wall" parent="Walls" instance=ExtResource("2_7nqhd")]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, -1, -2.5)
+
+[node name="Sketchfab_Scene" parent="Walls/wall" instance=ExtResource("8_p0j2a")]
+transform = Transform3D(5.90759e-16, 1.3515e-08, 0.309187, 0.309187, -1.3515e-08, 0, 1.3515e-08, 0.309187, -1.3515e-08, -1.71993, 2.06014, -1.25992)
+
+[node name="wall4" parent="Walls" instance=ExtResource("2_7nqhd")]
+transform = Transform3D(-2, -3.01992e-07, 1.32005e-14, 0, -8.74228e-08, -2, 3.01992e-07, -2, 8.74228e-08, 0, -1, 2.44793)
+
+[node name="wall3" parent="Walls" instance=ExtResource("2_7nqhd")]
+transform = Transform3D(-1.44766e-07, -3.31186, 1.44766e-07, 0, -1.44766e-07, -3.31186, 3.31186, -1.44766e-07, 6.32792e-15, 2.2, -3.3, 1.003)
+
+[node name="celing" parent="Walls" instance=ExtResource("2_7nqhd")]
+transform = Transform3D(-1.27795e-07, 2.55591e-07, 2.92362, 0, -2.92362, 2.55591e-07, 2.92362, 1.11722e-14, 1.27795e-07, 2.993, 3.37583, 1.003)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.54165, -1.89599)
+light_color = Color(0.81291, 0.66581, 0.574888, 1)
+light_energy = 1.161

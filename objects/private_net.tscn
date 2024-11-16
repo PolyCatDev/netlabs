@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://wnik7qatydba"]
+[gd_scene load_steps=7 format=3 uid="uid://wnik7qatydba"]
 
 [ext_resource type="PackedScene" uid="uid://diebixgoraquu" path="res://objects/computer/computer.tscn" id="1_grapu"]
+[ext_resource type="Script" path="res://objects/nets_despawner.gd" id="1_m7ciy"]
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="2_k0l3n"]
 [ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="3_7d0nb"]
 
@@ -11,6 +12,8 @@ size = Vector3(0.02, 0.02, 1)
 size = Vector3(0.02, 0.02, 1)
 
 [node name="PrivateNet" type="Node3D"]
+script = ExtResource("1_m7ciy")
+dedicated_slide = 1
 
 [node name="computer" parent="." instance=ExtResource("1_grapu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
