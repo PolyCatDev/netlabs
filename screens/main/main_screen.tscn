@@ -13,7 +13,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_pi1a2"]
 font = ExtResource("4_db2iq")
-font_size = 24
+font_size = 30
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ei4y"]
 

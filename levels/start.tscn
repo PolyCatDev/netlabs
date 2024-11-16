@@ -1,39 +1,47 @@
-[gd_scene load_steps=12 format=3 uid="uid://duq0n8xmlqc21"]
+[gd_scene load_steps=14 format=3 uid="uid://duq0n8xmlqc21"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_mq88t"]
 [ext_resource type="PackedScene" uid="uid://c7sg65ao6ed6i" path="res://enviourment/wall.tscn" id="2_7nqhd"]
 [ext_resource type="PackedScene" uid="uid://blfmdgkapv0eb" path="res://enviourment/Floor.tscn" id="2_g1jgc"]
 [ext_resource type="PackedScene" uid="uid://dgskm6qcro3un" path="res://player/player.tscn" id="4_sr7gr"]
+[ext_resource type="PackedScene" uid="uid://sy6ja7j5ipvy" path="res://objects/cardboard_boxes/scene.gltf" id="4_ux7k6"]
 [ext_resource type="PackedScene" uid="uid://6wcfvywpdj82" path="res://screens/start_screen.tscn" id="6_4wf54"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="6_cbrw6"]
 [ext_resource type="PackedScene" uid="uid://dq2d7y1nt7e8c" path="res://objects/button.tscn" id="7_36rmu"]
 [ext_resource type="PackedScene" uid="uid://cxs8badg2v8yg" path="res://objects/door/scene.gltf" id="8_p0j2a"]
 [ext_resource type="PackedScene" uid="uid://by0xcr14rdghl" path="res://levels/main.tscn" id="8_sa5mr"]
 [ext_resource type="PackedScene" uid="uid://dij46d55vw0n0" path="res://objects/simple table/table_2.tscn" id="10_2vcbt"]
+[ext_resource type="PackedScene" uid="uid://dksmtpbcoav0b" path="res://objects/lamp.tscn" id="12_behr3"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckqg7"]
-albedo_color = Color(0.493545, 0.493546, 0.493546, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d825n"]
+albedo_color = Color(0.61339, 0.61339, 0.61339, 1)
 
-[node name="Node3D2" type="Node3D"]
+[node name="Start" type="Node3D"]
 script = ExtResource("1_mq88t")
 
-[node name="floor" parent="." instance=ExtResource("2_g1jgc")]
+[node name="Floor" parent="." instance=ExtResource("2_g1jgc")]
 transform = Transform3D(-6.87209e-08, 0, 1.57215, 0, 1.57215, 0, -1.57215, 0, -6.87209e-08, 0.0106039, 4.76837e-07, 0.445307)
+
+[node name="Boxes2" parent="Floor" instance=ExtResource("4_ux7k6")]
+transform = Transform3D(-0.551352, 0, -0.147734, 0, 0.570802, 0, 0.147734, 0, -0.551352, 1.14156, 0, 0.957852)
+
+[node name="Boxes" parent="Floor" instance=ExtResource("4_ux7k6")]
+transform = Transform3D(0.688152, 0, -0.513157, 0, 0.858419, 0, 0.513157, 0, 0.688152, 1.05221, -3.03302e-07, -1.46119)
 
 [node name="Player" parent="." instance=ExtResource("4_sr7gr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
 
 [node name="Title" parent="." instance=ExtResource("6_cbrw6")]
-transform = Transform3D(0.586822, 0, 0, 0, 0.586822, 0, 0, 0, 0.586822, 0.0791706, 1.49309, -2.41143)
+transform = Transform3D(0.586822, 0, 0, 0, 0.586822, 0, 0, 0, 0.586822, 0, 1.493, -2.411)
 collision_layer = 49153
 scene = ExtResource("6_4wf54")
 viewport_size = Vector2(1152, 648)
 input_gamepad = true
-material = SubResource("StandardMaterial3D_ckqg7")
+material = SubResource("StandardMaterial3D_d825n")
 transparent = 0
 unshaded = true
 
-[node name="TableNoColision" parent="." instance=ExtResource("10_2vcbt")]
+[node name="TableNoCollision" parent="." instance=ExtResource("10_2vcbt")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.37114e-08, 0, -0.154782, -1.8)
 
 [node name="Button" parent="." instance=ExtResource("7_36rmu")]
@@ -49,8 +57,8 @@ transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, 
 [node name="wall" parent="Walls" instance=ExtResource("2_7nqhd")]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, -1, -2.5)
 
-[node name="Sketchfab_Scene" parent="Walls/wall" instance=ExtResource("8_p0j2a")]
-transform = Transform3D(5.90759e-16, 1.3515e-08, 0.309187, 0.309187, -1.3515e-08, 0, 1.3515e-08, 0.309187, -1.3515e-08, -1.71993, 2.06014, -1.25992)
+[node name="Door" parent="Walls/wall" instance=ExtResource("8_p0j2a")]
+transform = Transform3D(5.73206e-16, 1.31134e-08, 0.3, 0.3, -1.31134e-08, 0, 1.31134e-08, 0.3, -1.31134e-08, -1.6927, 2.06014, -1.25992)
 
 [node name="wall4" parent="Walls" instance=ExtResource("2_7nqhd")]
 transform = Transform3D(-2, -3.01992e-07, 1.32005e-14, 0, -8.74228e-08, -2, 3.01992e-07, -2, 8.74228e-08, 0, -1, 2.44793)
@@ -61,7 +69,5 @@ transform = Transform3D(-1.44766e-07, -3.31186, 1.44766e-07, 0, -1.44766e-07, -3
 [node name="celing" parent="Walls" instance=ExtResource("2_7nqhd")]
 transform = Transform3D(-1.27795e-07, 2.55591e-07, 2.92362, 0, -2.92362, 2.55591e-07, 2.92362, 1.11722e-14, 1.27795e-07, 2.993, 3.37583, 1.003)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.54165, -1.89599)
-light_color = Color(0.81291, 0.66581, 0.574888, 1)
-light_energy = 1.161
+[node name="Lamp" parent="." instance=ExtResource("12_behr3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.49982, -0.445454)

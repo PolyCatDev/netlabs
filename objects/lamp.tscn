@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dksmtpbcoav0b"]
+
+[ext_resource type="PackedScene" uid="uid://cf2mb786kw3pg" path="res://objects/lamp/scene.gltf" id="1_koo4m"]
+
+[node name="Lamp" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_koo4m")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Sketchfab_Scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0)
+light_color = Color(0.784603, 0.690058, 0.697624, 1)
+light_energy = 2.131

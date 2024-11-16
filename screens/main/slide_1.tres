@@ -1,9 +1,13 @@
 [gd_resource type="Resource" script_class="MainScreen" load_steps=3 format=3 uid="uid://bkt6oisr41nb3"]
 
 [ext_resource type="Script" path="res://resources/main_screen_resource.gd" id="1_4xatu"]
-[ext_resource type="Texture2D" uid="uid://cxa0eb0kt6dqn" path="res://assets/omonus_cat.jpg" id="2_dkuck"]
+[ext_resource type="Texture2D" uid="uid://mbl6aogavx8c" path="res://assets/image.png" id="2_wefqy"]
 
 [resource]
 script = ExtResource("1_4xatu")
-text = "Hmmmmmm"
-texture = ExtResource("2_dkuck")
+text = "The Network
+- The simplest way to make a network is directly connecting two computers
+
+- Grab the bar in front of you and place it on the circle to connect the two computers
+"
+texture = ExtResource("2_wefqy")

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dt6k4nuvpo38o" path="res://addons/godot-xr-tools/hands/textures/glove_normal.png" id="2_uiqlw"]
 
 [resource]
-albedo_color = Color(0.858787, 0.873024, 0.955473, 1)
+albedo_color = Color(0.893992, 0.846458, 0.764294, 1)
 normal_enabled = true
 normal_scale = 0.1
 normal_texture = ExtResource("2_uiqlw")

@@ -22,5 +22,8 @@ func _ready():
 func spawn_objects(slide):
 	if slide > 0:
 		var playnet = net[slide].instantiate()
+		playnet.position = Vector3(0.0, 1.065, -1.8)
+		playnet.rotation.y = deg_to_rad(-90) #-1.57
+		playnet.scale =  Vector3(0.8, 0.8, 0.8)
 		add_child(playnet)
 	

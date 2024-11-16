@@ -1,9 +1,12 @@
 [gd_resource type="Resource" script_class="MainScreen" load_steps=3 format=3 uid="uid://l7w06371gstw"]
 
 [ext_resource type="Script" path="res://resources/main_screen_resource.gd" id="1_76dlr"]
-[ext_resource type="Texture2D" uid="uid://n6yc6jc0y8gw" path="res://assets/uuummm_cat.jpg" id="2_e4l0t"]
+[ext_resource type="Texture2D" uid="uid://bf00y54extemi" path="res://assets/switchdiagram.png" id="2_1aus3"]
 
 [resource]
 script = ExtResource("1_76dlr")
-text = "uuuuuuuuuuuuu"
-texture = ExtResource("2_e4l0t")
+text = "LAN
+- The Local Area Network or LAN is the connection of multiple devices on the same network using a switch or router
+
+- grab the router in front of you and place it on the circle followed by grabbing the two cables and placing them on the circles adjacent to the router to make a LAN"
+texture = ExtResource("2_1aus3")
