@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b728wniofsrrk"]
+
+[ext_resource type="PackedScene" uid="uid://diebixgoraquu" path="res://objects/computer/computer.tscn" id="1_no18g"]
+[ext_resource type="PackedScene" uid="uid://chc2rytfjrw56" path="res://objects/router.tscn" id="2_vkhxi"]
+[ext_resource type="PackedScene" uid="uid://c3itqcycxdn65" path="res://objects/small_cube.tscn" id="3_h1ov1"]
+[ext_resource type="PackedScene" uid="uid://b500xofgyt426" path="res://objects/small_cube_2.tscn" id="4_3r3cq"]
+
+[node name="LanNet" type="Node3D"]
+
+[node name="computer" parent="." instance=ExtResource("1_no18g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
+
+[node name="computer2" parent="." instance=ExtResource("1_no18g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8)
+
+[node name="router" parent="." instance=ExtResource("2_vkhxi")]
+
+[node name="small_cube" parent="." instance=ExtResource("3_h1ov1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
+
+[node name="small_cube2" parent="." instance=ExtResource("4_3r3cq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -0.3)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5lk5of6mm8fl"]
+
+[ext_resource type="PackedScene" uid="uid://djcp8t6v334d8" path="res://objects/flying_router.tscn" id="1_r1ei5"]
+[ext_resource type="PackedScene" uid="uid://clhcngkpei1pn" path="res://objects/small_flying_cube.tscn" id="2_04a33"]
+[ext_resource type="PackedScene" uid="uid://d2xd6apnmkuaq" path="res://objects/small_flying_cube2.tscn" id="3_3qysi"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="flying_router" parent="." instance=ExtResource("1_r1ei5")]
+
+[node name="small_cube" parent="." instance=ExtResource("2_04a33")]
+
+[node name="small_cube2" parent="." instance=ExtResource("3_3qysi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0158506, 0.0225277, 0.277317)

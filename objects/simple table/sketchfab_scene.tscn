@@ -12,9 +12,11 @@ transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0, 0)
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, -0.000676274, 0.0286514, 0.011289)
 
-[node name="SnapZone_router" parent="." index="1" instance=ExtResource("2_wfnqg")]
+[node name="SnapZone_router" parent="." index="1" groups=["small_cube3"] instance=ExtResource("2_wfnqg")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.000749111, 0.902557, -0.000143409)
 grab_distance = 0.3
+snap_require = ""
+snap_exclude = "small_cube"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
 collision_layer = 21

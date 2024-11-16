@@ -102,5 +102,10 @@ libraries = {
 "": SubResource("AnimationLibrary_4cauv")
 }
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="body_entered" from="Top/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Top/Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

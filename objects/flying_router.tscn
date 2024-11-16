@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://djcp8t6v334d8"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_ptaty"]
+[ext_resource type="PackedScene" uid="uid://b6a4s5j7qolxa" path="res://objects/router/scene.gltf" id="2_flqpd"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_uo5ip"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_ktlxf"]
+[ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="5_i3ujs"]
+[ext_resource type="PackedScene" uid="uid://btufk1nkk70ei" path="res://snapzones/routerSnapzone/snap_zone_router_point_1.tscn" id="6_k6kxo"]
+[ext_resource type="PackedScene" uid="uid://djv46gxxs1jkj" path="res://snapzones/routerSnapzone/snap_zone_router_point_2.tscn" id="7_cm88v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_swxwr"]
+size = Vector3(0.2, 0.152, 0.2)
+
+[node name="flying_router" type="RigidBody3D" groups=["router"]]
+collision_layer = 213
+collision_mask = 213
+script = ExtResource("1_ptaty")
+picked_up_layer = 65732
+
+[node name="router" parent="." instance=ExtResource("2_flqpd")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.252911, 0)
+
+[node name="GrabPointHandLeft" parent="." instance=ExtResource("3_uo5ip")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0977372, -0.0194554, 0.0738795)
+
+[node name="GrabPointHandRight" parent="." instance=ExtResource("4_ktlxf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0977372, -0.0214493, -0.0865282)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["router"]]
+shape = SubResource("BoxShape3D_swxwr")
+
+[node name="GrabPointSnap" parent="." groups=["router"] instance=ExtResource("5_i3ujs")]
+
+[node name="SnapZone_router_point1" parent="." groups=["small_flying_cube"] instance=ExtResource("6_k6kxo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.068, -0.06, 0.043)
+snap_require = "small_flying_cube"
+
+[node name="SnapZone_router_point2" parent="." groups=["small_flying_cube2"] instance=ExtResource("7_cm88v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.068, -0.06, 0)
+snap_require = "small_flying_cube2"
+
+[editable path="router"]

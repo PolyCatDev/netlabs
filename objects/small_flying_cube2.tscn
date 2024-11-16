@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2xd6apnmkuaq"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_8uj87"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_fvryv"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="3_70ucp"]
+[ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="4_eillo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4af8t"]
+size = Vector3(0.02, 0.02, 0.02)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k86ru"]
+size = Vector3(0.02, 0.02, 0.02)
+
+[node name="small_cube" type="RigidBody3D" groups=["small_flying_cube2"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
+collision_layer = 197
+collision_mask = 197
+script = ExtResource("1_8uj87")
+
+[node name="GrabPointHandLeft" parent="." instance=ExtResource("2_fvryv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="GrabPointHandRight" parent="." instance=ExtResource("3_70ucp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="GrabPointSnap" parent="." groups=["small_flying_cube2"] instance=ExtResource("4_eillo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.297648, 0.416387, 0.0829992)
+
+[node name="small_cube" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 192
+mesh = SubResource("BoxMesh_4af8t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_k86ru")
