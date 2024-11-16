@@ -35,6 +35,9 @@ import/blender/enabled=false
 router=""
 small_cube=""
 small_cube2=""
+small_cube3=""
+small_flying_cube=""
+small_flying_cube2=""
 
 [physics]
 
