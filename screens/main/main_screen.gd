@@ -7,14 +7,13 @@ extends Control
 var slide = 0
 
 func _ready() -> void:
-	GlobalVars.slide = slide
 	button_udeflow_overflow_prorection()
 	main_label.text = resource[slide].text
 	sprite.texture = resource[slide].texture
 
 func _on_button_pressed() -> void:
 	slide = slide + 1
-	GlobalVars.slide = slide
+	Global.current_scene.emit(slide)
 	button_udeflow_overflow_prorection()
 	main_label.text = resource[slide].text
 	sprite.texture = resource[slide].texture
@@ -22,7 +21,7 @@ func _on_button_pressed() -> void:
 
 func _on_button_back_pressed() -> void:
 	slide = slide - 1
-	GlobalVars.slide = slide
+	Global.current_scene.emit(slide)
 	button_udeflow_overflow_prorection()
 	main_label.text = resource[slide].text
 	sprite.texture = resource[slide].texture

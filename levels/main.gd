@@ -14,3 +14,7 @@ func _ready():
 		get_viewport().use_xr = true
 	else:
 		print("OpenXR not initialized, please check if your headset is connected")
+	Global.current_scene.connect(spawn_objects)
+
+func spawn_objects(slide):
+	print(slide)
