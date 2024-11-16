@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dq2d7y1nt7e8c" path="res://objects/button.tscn" id="7_36rmu"]
 [ext_resource type="PackedScene" uid="uid://cxs8badg2v8yg" path="res://objects/door/scene.gltf" id="8_p0j2a"]
 [ext_resource type="PackedScene" uid="uid://by0xcr14rdghl" path="res://levels/main.tscn" id="8_sa5mr"]
-[ext_resource type="PackedScene" path="res://objects/simple table/sketchfab_scene.tscn" id="10_40k17"]
+[ext_resource type="PackedScene" uid="uid://dij46d55vw0n0" path="res://objects/simple table/table_2.tscn" id="10_2vcbt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3y2um"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -27,7 +27,7 @@ glow_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_a3ymc"]
 size = Vector3(1, 0.1, 2)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 script = ExtResource("1_mq88t")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -43,7 +43,7 @@ transform = Transform3D(-6.87209e-08, 0, 1.57215, 0, 1.57215, 0, -1.57215, 0, -6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
 
 [node name="Viewport2Din3D" parent="." instance=ExtResource("6_cbrw6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14358, 1.49309, -1.79903)
+transform = Transform3D(0.586822, 0, 0, 0, 0.586822, 0, 0, 0, 0.586822, 0.0791706, 1.49309, -2.41143)
 collision_layer = 49153
 scene = ExtResource("6_4wf54")
 viewport_size = Vector2(1152, 648)
@@ -69,24 +69,33 @@ transform = Transform3D(-1.44766e-07, -3.31186, 1.44766e-07, 0, -1.44766e-07, -3
 [node name="celing" parent="." instance=ExtResource("2_7nqhd")]
 transform = Transform3D(-1.27795e-07, 2.55591e-07, 2.92362, 0, -2.92362, 2.55591e-07, 2.92362, 1.11722e-14, 1.27795e-07, 2.993, 3.37583, 1.003)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.308433, 3.44887, -0.269898)
-shadow_enabled = true
-shadow_bias = 0.0
-spot_range = 17.759
-spot_attenuation = 0.39
-spot_angle = 80.0
+[node name="table2" parent="." instance=ExtResource("10_2vcbt")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.37114e-08, 0, -0.154782, -1.8)
 
-[node name="Sketchfab_Scene2" parent="." instance=ExtResource("10_40k17")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -1.8)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="table2"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 0.833333, 0, 1.06581e-14, 0, 1, 0, 0.133, 0)
 collision_layer = 5
 collision_mask = 5
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_Scene2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="table2/StaticBody3D"]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0.75, 0)
+shape = SubResource("BoxShape3D_a3ymc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="table2"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 0.833333, 0, 1.06581e-14, 0, 1, 0, 0.128985, 0)
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
-shape = SubResource("BoxShape3D_a3ymc")
+[node name="Button" parent="." instance=ExtResource("7_36rmu")]
+transform = Transform3D(-2.00957e-08, 0, 0.459736, 0, 0.459736, 0, -0.459736, 0, -2.00957e-08, -5.55112e-16, 0.791542, -1.81734)
+change_scene = true
+scene = ExtResource("8_sa5mr")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 8.35187e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, -0.214427, 2.57196, -0.62444)
+light_color = Color(1, 0.776471, 0.592157, 1)
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_reverse_cull_face = true
+spot_range = 17.759
+spot_attenuation = 0.39
+spot_angle = 80.0

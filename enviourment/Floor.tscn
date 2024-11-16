@@ -19,16 +19,16 @@ size = Vector2(5, 5)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bami8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5bipx"]
-size = Vector3(5, 0, 5)
+size = Vector3(5, 0.2, 5)
 
 [node name="Floor" type="MeshInstance3D"]
 mesh = SubResource("PlaneMesh_jfssx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-collision_layer = 7
-collision_mask = 7
+collision_layer = 23
+collision_mask = 23
 physics_material_override = SubResource("PhysicsMaterial_bami8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0115693, -2.38419e-07, 0.00632)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012, -0.095, 0.006)
 shape = SubResource("BoxShape3D_5bipx")

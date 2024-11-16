@@ -16,15 +16,18 @@ material = SubResource("StandardMaterial3D_keuc5")
 size = Vector3(0.02, 0.02, 0.02)
 
 [node name="small_cube2" groups=["small_cube2"] instance=ExtResource("1_eblsw")]
+collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
 shape = SubResource("BoxShape3D_lvcs8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+[node name="GrabPointHandLeft" parent="." index="1" instance=ExtResource("2_86c2y")]
+
+[node name="GrabPointHandRight" parent="." index="2" instance=ExtResource("3_qyyf4")]
+
+[node name="GrabPointSnap" parent="." index="3" groups=["small_cube2"] instance=ExtResource("4_5glem")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="4"]
 mesh = SubResource("BoxMesh_t5g8u")
 
-[node name="GrabPointHandLeft" parent="." index="2" instance=ExtResource("2_86c2y")]
-
-[node name="GrabPointHandRight" parent="." index="3" instance=ExtResource("3_qyyf4")]
-
-[node name="GrabPointSnap" parent="." index="4" groups=["small_cube2"] instance=ExtResource("4_5glem")]
+[node name="small_cube2" type="Node3D" parent="." index="5"]

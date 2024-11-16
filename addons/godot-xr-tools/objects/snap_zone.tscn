@@ -8,8 +8,8 @@ resource_local_to_scene = true
 radius = 0.1
 
 [node name="SnapZone_router" type="Area3D" groups=["router"]]
-collision_layer = 4
-collision_mask = 65540
+collision_layer = 16
+collision_mask = 65552
 script = ExtResource("1")
 grab_distance = 0.1
 snap_mode = 1

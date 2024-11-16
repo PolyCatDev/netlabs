@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsvsflcjh1if2"]
+[gd_scene load_steps=3 format=3 uid="uid://ciuwalv3bw18h"]
 
 [ext_resource type="PackedScene" uid="uid://kn024iy32an1" path="res://objects/simple table/scene.gltf" id="1_x445h"]
 [ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="2_wfnqg"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_dj2xv"]
-size = Vector3(1, 0.1, 2.02173)
 
 [node name="Table" instance=ExtResource("1_x445h")]
 transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0, 0)
@@ -13,13 +10,5 @@ transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, -0.000676274, 0.0286514, 0.011289)
 
 [node name="SnapZone_router" parent="." index="1" instance=ExtResource("2_wfnqg")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.000749111, 0.902557, -0.000143409)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.861326, 0)
 grab_distance = 0.3
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
-collision_layer = 21
-collision_mask = 21
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78137, 0)
-shape = SubResource("BoxShape3D_dj2xv")

@@ -18,10 +18,12 @@ tracker = &"left_hand"
 [node name="LeftHand" parent="LeftCon" instance=ExtResource("1_4eb5s")]
 
 [node name="CollisionHandLeft" parent="LeftCon" instance=ExtResource("3_gwxb1")]
-collision_layer = 131076
-collision_mask = 327684
+collision_layer = 131080
+collision_mask = 327688
 
 [node name="FunctionPickup" parent="LeftCon" instance=ExtResource("4_00mqp")]
+grab_collision_mask = 327700
+ranged_collision_mask = 20
 
 [node name="FunctionPointer" parent="LeftCon" instance=ExtResource("5_huien")]
 show_laser = 2
@@ -34,10 +36,12 @@ tracker = &"right_hand"
 [node name="RightHand" parent="RightCon" instance=ExtResource("4_rsfaa")]
 
 [node name="CollisionHandRight" parent="RightCon" instance=ExtResource("5_ujm8o")]
-collision_layer = 131084
-collision_mask = 327692
+collision_layer = 131080
+collision_mask = 327688
 
 [node name="FunctionPickup" parent="RightCon" instance=ExtResource("4_00mqp")]
+grab_collision_mask = 327700
+ranged_collision_mask = 20
 
 [node name="FunctionPointer" parent="RightCon" instance=ExtResource("5_huien")]
 show_laser = 2

@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="3_7gmtm"]
 [ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="4_tywaq"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_gtkte"]
+[sub_resource type="BoxMesh" id="BoxMesh_7prso"]
 size = Vector3(0.02, 0.02, 0.02)
 
-[sub_resource type="BoxMesh" id="BoxMesh_7prso"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_gtkte"]
 size = Vector3(0.02, 0.02, 0.02)
 
 [node name="small_cube" type="RigidBody3D" groups=["small_cube"]]
@@ -17,17 +17,17 @@ collision_mask = 4
 script = ExtResource("1_tfphy")
 
 [node name="GrabPointHandLeft" parent="." instance=ExtResource("2_wncpi")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0977372, -0.0194554, 0.0738795)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="GrabPointHandRight" parent="." instance=ExtResource("3_7gmtm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0977372, -0.0214493, -0.0865282)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["router"]]
-shape = SubResource("BoxShape3D_gtkte")
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="GrabPointSnap" parent="." groups=["small_cube"] instance=ExtResource("4_tywaq")]
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="small_cube" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_7prso")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["router"]]
+shape = SubResource("BoxShape3D_gtkte")
