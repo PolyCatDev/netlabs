@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7sg65ao6ed6i"]
+[gd_scene load_steps=7 format=3 uid="uid://c7sg65ao6ed6i"]
 
 [ext_resource type="Texture2D" uid="uid://bhiqnu7o2mnph" path="res://textures/wall/plastered_wall_ao_1k.png" id="1_pr18l"]
 [ext_resource type="Texture2D" uid="uid://dqvbvnmf6md5n" path="res://textures/wall/plastered_wall_nor_gl_1k.png" id="3_4g6iv"]
@@ -19,7 +19,18 @@ uv1_scale = Vector3(10, 10, 10)
 material = SubResource("StandardMaterial3D_5yued")
 size = Vector2(5, 5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8xdol"]
+size = Vector3(5, 0.2, 5)
+
 [node name="wall" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_me7ol")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 23
+collision_mask = 23
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.098, 0)
+shape = SubResource("BoxShape3D_8xdol")
