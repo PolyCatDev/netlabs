@@ -1,3 +1,3 @@
 extends Node
 
-var slide = 0
+signal current_scene(value)
