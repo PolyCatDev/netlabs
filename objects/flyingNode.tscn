@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://clhcngkpei1pn" path="res://objects/small_flying_cube.tscn" id="2_04a33"]
 [ext_resource type="PackedScene" uid="uid://d2xd6apnmkuaq" path="res://objects/small_flying_cube2.tscn" id="3_3qysi"]
 
-[node name="Node3D" type="Node3D"]
+[node name="FlyingRouter" type="Node3D"]
 
 [node name="flying_router" parent="." instance=ExtResource("1_r1ei5")]
 
