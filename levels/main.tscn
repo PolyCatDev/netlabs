@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://by0xcr14rdghl"]
+[gd_scene load_steps=21 format=3 uid="uid://by0xcr14rdghl"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_mq88t"]
 [ext_resource type="PackedScene" uid="uid://c7sg65ao6ed6i" path="res://enviourment/wall.tscn" id="2_a55se"]
@@ -12,10 +12,26 @@
 [ext_resource type="PackedScene" uid="uid://dsvsflcjh1if2" path="res://objects/simple table/sketchfab_scene.tscn" id="9_2xjkr"]
 [ext_resource type="Resource" uid="uid://bkt6oisr41nb3" path="res://screens/main/slide_1.tres" id="9_r2lvh"]
 [ext_resource type="Resource" uid="uid://l7w06371gstw" path="res://screens/main/slide_2.tres" id="10_k2f35"]
+[ext_resource type="PackedScene" uid="uid://dksmtpbcoav0b" path="res://objects/lamp.tscn" id="12_vf087"]
 [ext_resource type="PackedScene" uid="uid://b728wniofsrrk" path="res://objects/lan_net.tscn" id="13_6fskl"]
 [ext_resource type="PackedScene" uid="uid://wnik7qatydba" path="res://objects/private_net.tscn" id="13_svqck"]
-[ext_resource type="PackedScene" uid="uid://dq2d7y1nt7e8c" path="res://objects/button.tscn" id="13_vn8pb"]
-[ext_resource type="PackedScene" uid="uid://duq0n8xmlqc21" path="res://levels/start.tscn" id="14_sj26u"]
+[ext_resource type="PackedScene" uid="uid://sy6ja7j5ipvy" path="res://objects/cardboard_boxes/scene.gltf" id="15_p8prk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3y2um"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_wc2tn"]
+sky_material = SubResource("ProceduralSkyMaterial_3y2um")
+
+[sub_resource type="Environment" id="Environment_gl11v"]
+background_mode = 2
+sky = SubResource("Sky_wc2tn")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucxkm"]
+albedo_color = Color(0.91664, 0.91664, 0.91664, 1)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_mq88t")
@@ -24,30 +40,34 @@ net = Array[PackedScene]([null, ExtResource("13_svqck"), ExtResource("13_6fskl")
 [node name="Player" parent="." instance=ExtResource("4_sr7gr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gl11v")
+
+[node name="floor" parent="." instance=ExtResource("2_g1jgc")]
+transform = Transform3D(-6.87209e-08, 0, 1.57215, 0, 1.57215, 0, -1.57215, 0, -6.87209e-08, 0.0106039, 4.76837e-07, 0.445307)
+
+[node name="Boxes" parent="floor" instance=ExtResource("15_p8prk")]
+transform = Transform3D(0.616377, 0, -0.584204, 0, 0.849244, 0, 0.584204, 0, 0.616377, 1.26999, -3.03302e-07, -1.66108)
+
+[node name="Boxes2" parent="floor" instance=ExtResource("15_p8prk")]
+transform = Transform3D(-0.632484, 0, -0.0674592, 0, 0.636072, 0, 0.0674592, 0, -0.632484, 1.0287, -3.03302e-07, 1.0508)
+
 [node name="MainScreen" parent="." instance=ExtResource("6_cbrw6")]
 transform = Transform3D(0.471397, 0, 0, 0, 0.471397, 0, 0, 0, 0.471397, 0, 1.81131, -2.4)
 collision_layer = 49153
 scene = ExtResource("6_xprjj")
 viewport_size = Vector2(1152, 648)
 input_gamepad = true
+material = SubResource("StandardMaterial3D_ucxkm")
+transparent = 0
 scene_properties_keys = PackedStringArray("main_screen.gd", "resource")
 resource = Array[ExtResource("7_wdhgb")]([ExtResource("8_v7117"), ExtResource("9_r2lvh"), ExtResource("10_k2f35")])
-
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, -0.214427, 2.58065, -1.25739)
-light_color = Color(1, 0.776471, 0.592157, 1)
-shadow_enabled = true
-shadow_bias = 0.0
-shadow_reverse_cull_face = true
-spot_range = 17.759
-spot_attenuation = 0.39
-spot_angle = 80.0
 
 [node name="Table" parent="." groups=["router", "small_cube"] instance=ExtResource("9_2xjkr")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.37114e-08, 0, -0.0775461, -1.85)
 
-[node name="floor" parent="." instance=ExtResource("2_g1jgc")]
-transform = Transform3D(-6.87209e-08, 0, 1.57215, 0, 1.57215, 0, -1.57215, 0, -6.87209e-08, 0.0106039, 4.76837e-07, 0.445307)
+[node name="Lamp" parent="Table" instance=ExtResource("12_vf087")]
+transform = Transform3D(1, 0, -8.88178e-15, 0, 1, 0, 8.88178e-15, 0, 1, -1.27338, 2.28121, -5.56614e-08)
 
 [node name="Walls" type="Node3D" parent="."]
 
@@ -68,8 +88,3 @@ transform = Transform3D(-2, -3.01992e-07, 1.32005e-14, 0, -8.74228e-08, -2, 3.01
 
 [node name="celing" parent="Walls" instance=ExtResource("2_a55se")]
 transform = Transform3D(-1.27795e-07, 2.55591e-07, 2.92362, 0, -2.92362, 2.55591e-07, 2.92362, 1.11722e-14, 1.27795e-07, 2.993, 3.37583, 1.003)
-
-[node name="Button" parent="." instance=ExtResource("13_vn8pb")]
-transform = Transform3D(0.3, 0, 0, 0, -0.3, 2.62268e-08, 0, -2.62268e-08, -0.3, 0, 0.85479, -1.76294)
-change_scene = true
-scene = ExtResource("14_sj26u")

@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="MainScreen" load_steps=3 format=3 uid="uid://c7es57hm280d8"]
 
 [ext_resource type="Script" path="res://resources/main_screen_resource.gd" id="1_o5o2p"]
-[ext_resource type="Texture2D" uid="uid://cj38swyecnpgb" path="res://assets/bday_cat.jpg" id="2_y8jy0"]
+[ext_resource type="Texture2D" uid="uid://bah86c5sqk3i8" path="res://assets/krwj5e8u.bmp" id="2_eagry"]
 
 [resource]
 script = ExtResource("1_o5o2p")
-text = "Yayyyy :33"
-texture = ExtResource("2_y8jy0")
+text = "Welcome to the NetLabs VR interactive course for Networking Basics"
+texture = ExtResource("2_eagry")

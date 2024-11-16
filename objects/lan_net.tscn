@@ -17,6 +17,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8)
 
 [node name="router" parent="." instance=ExtResource("2_vkhxi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.393427, 0, 0)
 
 [node name="small_cube" parent="." instance=ExtResource("3_h1ov1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
