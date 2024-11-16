@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3itqcycxdn65"]
+[gd_scene load_steps=10 format=3 uid="uid://c3itqcycxdn65"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_tfphy"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_wncpi"]
@@ -6,10 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="4_tywaq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7prso"]
-size = Vector3(0.02, 0.02, 0.02)
+size = Vector3(0.33, 0.02, 0.02)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gtkte"]
-size = Vector3(0.02, 0.02, 0.02)
+size = Vector3(0.3, 0.02, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_760xd"]
+size = Vector3(0.02, 0.04, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8ptnf"]
+size = Vector3(0.02, 0.02, 0.12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j73si"]
+size = Vector3(0.02, 0.02, 0.12)
 
 [node name="small_cube" type="RigidBody3D" groups=["small_cube"]]
 collision_layer = 4
@@ -23,6 +32,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="GrabPointSnap" parent="." groups=["small_cube"] instance=ExtResource("4_tywaq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.159864, -0.0221941, 0.10608)
 
 [node name="small_cube" type="Node3D" parent="."]
 
@@ -31,3 +41,16 @@ mesh = SubResource("BoxMesh_7prso")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["router"]]
 shape = SubResource("BoxShape3D_gtkte")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16, -0.01, 0)
+mesh = SubResource("BoxMesh_760xd")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16, -0.02, 0.05)
+mesh = SubResource("BoxMesh_8ptnf")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16, -0.02, 0.05)
+shape = SubResource("BoxShape3D_j73si")

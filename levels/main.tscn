@@ -81,14 +81,22 @@ spot_attenuation = 0.39
 spot_angle = 80.0
 
 [node name="router" parent="." instance=ExtResource("10_vl0jo")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.000513971, 1.0286, -1.50261)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.000513971, 1.0286, -1.84271)
 
 [node name="small_cube" parent="." instance=ExtResource("14_rsq26")]
-transform = Transform3D(1, 0, 0, 0, 0.999348, -0.0361205, 0, 0.0361205, 0.999348, -0.00999349, 0.931419, -1.71023)
+transform = Transform3D(1, 0, 0, 0, 0.999348, -0.0361205, 0, 0.0361205, 0.999348, -0.2, 1, -2.02)
+picked_up_layer = 65540
+
+[node name="small_cube3" parent="." instance=ExtResource("14_rsq26")]
+transform = Transform3D(1, 0, 0, 0, 0.999348, -0.0361205, 0, 0.0361205, 0.999348, -0.2, 1, -2.02)
+picked_up_layer = 65540
+
+[node name="small_cube4" parent="." instance=ExtResource("14_rsq26")]
+transform = Transform3D(1, 0, 0, 0, 0.999348, -0.0361205, 0, 0.0361205, 0.999348, -0.2, 1, -2.02)
 picked_up_layer = 65540
 
 [node name="small_cube2" parent="." instance=ExtResource("13_6gmse")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0739506, 0.929834, -1.70883)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.218734, 1, -2.02)
 picked_up_layer = 65540
 
 [node name="computer" parent="." instance=ExtResource("16_1c0ek")]

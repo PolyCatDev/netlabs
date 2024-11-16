@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b500xofgyt426"]
+[gd_scene load_steps=11 format=3 uid="uid://b500xofgyt426"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_eblsw"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_86c2y"]
@@ -6,14 +6,23 @@
 [ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="4_5glem"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lvcs8"]
-size = Vector3(0.02, 0.02, 0.02)
+size = Vector3(0.02, 0.02, 0.46)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_keuc5"]
 albedo_color = Color(0.336608, 0.336608, 0.336608, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_t5g8u"]
 material = SubResource("StandardMaterial3D_keuc5")
-size = Vector3(0.02, 0.02, 0.02)
+size = Vector3(0.02, 0.02, 0.46)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rxijd"]
+size = Vector3(0.02, 0.04, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oxuy2"]
+size = Vector3(0.115, 0.02, 0.02)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gdy05"]
+size = Vector3(0.115, 0.02, 0.02)
 
 [node name="small_cube2" groups=["small_cube2"] instance=ExtResource("1_eblsw")]
 collision_mask = 4
@@ -26,8 +35,21 @@ shape = SubResource("BoxShape3D_lvcs8")
 [node name="GrabPointHandRight" parent="." index="2" instance=ExtResource("3_qyyf4")]
 
 [node name="GrabPointSnap" parent="." index="3" groups=["small_cube2"] instance=ExtResource("4_5glem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105, -0.02, -0.22)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="4"]
 mesh = SubResource("BoxMesh_t5g8u")
 
 [node name="small_cube2" type="Node3D" parent="." index="5"]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, -0.22)
+mesh = SubResource("BoxMesh_rxijd")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -0.02, -0.22)
+mesh = SubResource("BoxMesh_oxuy2")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -0.02, -0.22)
+shape = SubResource("BoxShape3D_gdy05")
