@@ -1,5 +1,7 @@
 extends Control
 
+signal current_slide(slide)
+
 @export var resource: Array[MainScreen] = []
 @onready var main_label = $HBoxContainer/HBoxContainer/Label
 @onready var sprite = $HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/TextureRect
@@ -15,6 +17,7 @@ func _on_button_pressed() -> void:
 	button_udeflow_overflow_prorection()
 	main_label.text = resource[slide].text
 	sprite.texture = resource[slide].texture
+	emit_signal("current_slide", slide)
 	
 
 func _on_button_back_pressed() -> void:
@@ -22,6 +25,7 @@ func _on_button_back_pressed() -> void:
 	button_udeflow_overflow_prorection()
 	main_label.text = resource[slide].text
 	sprite.texture = resource[slide].texture
+	emit_signal("current_slide", slide)
 	
 
 func button_udeflow_overflow_prorection() -> void:
