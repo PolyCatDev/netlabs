@@ -61,7 +61,7 @@ transform = Transform3D(-2, -3.01992e-07, 1.32005e-14, 0, -8.74228e-08, -2, 3.01
 [node name="celing" parent="." instance=ExtResource("2_a55se")]
 transform = Transform3D(-1.27795e-07, 2.55591e-07, 2.92362, 0, -2.92362, 2.55591e-07, 2.92362, 1.11722e-14, 1.27795e-07, 2.993, 3.37583, 1.003)
 
-[node name="Viewport2Din3D" parent="." instance=ExtResource("6_cbrw6")]
+[node name="MainScreen" parent="." instance=ExtResource("6_cbrw6")]
 transform = Transform3D(0.471397, 0, 0, 0, 0.471397, 0, 0, 0, 0.471397, 0, 1.81131, -2.4)
 collision_layer = 49153
 scene = ExtResource("6_xprjj")
@@ -80,9 +80,6 @@ spot_range = 17.759
 spot_attenuation = 0.39
 spot_angle = 80.0
 
-[node name="Sketchfab_Scene2" parent="." groups=["router", "small_cube"] instance=ExtResource("9_2xjkr")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.37114e-08, 0, -0.0775461, -1.85)
-
 [node name="router" parent="." instance=ExtResource("10_vl0jo")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.000513971, 1.0286, -1.50261)
 
@@ -99,3 +96,6 @@ transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, -0
 
 [node name="computer2" parent="." instance=ExtResource("17_5mtko")]
 transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 0.668, 1.05, -1.997)
+
+[node name="Table" parent="." groups=["router", "small_cube"] instance=ExtResource("9_2xjkr")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.37114e-08, 0, -0.0775461, -1.85)
